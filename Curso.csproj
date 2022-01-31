@@ -383,6 +383,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <None Include="Properties\PublishProfiles\Excellenceapp - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Excellenceapp - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\Excellenceapp - Web Deploy2.pubxml" />
     <None Include="Properties\PublishProfiles\SysStrategia - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\IndexModal\IndexModal.js" />

@@ -163,7 +163,7 @@
 
                     <label class="form-check-label" style="color:whitesmoke">Nueva Fecha Límite </label>
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Fec_Fin, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.Fec_Fin, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                         @Html.ValidationMessageFor(model => model.Fec_Fin, "", new { @class = "text-danger" })
                     </div>
                 </div>
