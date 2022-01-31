@@ -1,0 +1,1071 @@
+﻿    @{
+    var videoUrl1 = (string)ViewData["Video1"];
+    var videoUrl2 = (string)ViewData["Video2"];
+    var videoUrl3 = (string)ViewData["Video3"];
+    var videoUrl4 = (string)ViewData["Video4"];
+    var videoUrl5 = (string)ViewData["Video5"];
+    var videoUrl6 = (string)ViewData["Video6"];
+    var videoUrl7 = (string)ViewData["Video7"];
+    var videoUrl8 = (string)ViewData["Video8"];
+    var videoUrl9 = (string)ViewData["Video9"];
+    var videoUrl10 = (string)ViewData["Video10"];
+    var videoUrl11 = (string)ViewData["Video11"];
+    var videoUrl12 = (string)ViewData["Video12"];
+    var videoUrl13 = (string)ViewData["Video13"];
+}
+
+<div class="modal fade " id="myModal1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="text-shadow:4px 2px 2px black" id="demo"><strong>Introducción</strong></h2>
+                <button type="button" class="close" onclick="cerrarVid1()" data-dismiss="modal" >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo1" controlslist="nodownload">
+                                <source id="videos1" src=@videoUrl1 type="video/mp4" />
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal2" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header  ">
+                <h2 class="modal-title"  style="text-shadow:4px 2px 2px black;position:center;" id="demo"><strong>Administración de Efectivo</strong></h2>
+                <button type="button" class="close" id="close2" onclick="cerrarVid2()" data-dismiss="modal" >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo2" controlslist="nodownload">
+                                <source id="videos2" src=@videoUrl2 type="video/mp4" />
+
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+           
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal3" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="text-shadow:4px 2px 2px black;position:center;"  id="demo"><strong>Retornos Finacieros</strong></h2>
+                <button type="button" class="close" id="stop" onclick="cerrarVid3()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo3" controlslist="nodownload">
+                                <source id="videos3" src=@videoUrl3 type="video/mp4" />
+
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal4" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="text-shadow:4px 2px 2px black;position:center;" id="demo"><strong>Transferencias Internacionales</strong></h2>
+                <button type="button" class="close" id="stop" onclick="cerrarVid4()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo4" controlslist="nodownload">
+                                <source id="videos4" src=@videoUrl4 type="video/mp4" />
+
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal5" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="text-shadow:4px 2px 2px black;position:center;" id="demo"><strong>Desarrollo Total</strong></h2>
+                <button type="button" class="close" id="stop" onclick="cerrarVid5()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo5" controlslist="nodownload">
+                                <source id="videos5" src=@videoUrl5 type="video/mp4" />
+
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal6" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="text-shadow:4px 2px 2px black" id="demo"><strong>TC Monedero electrónico</strong></h2>
+                <button type="button" class="close" id="stop" onclick="cerrarVid6()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo6" controlslist="nodownload">
+                                <source id="videos6" src=@videoUrl6 type="video/mp4" />
+
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal7" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="text-shadow:4px 2px 2px black" id="demo"><strong>Terminal Punto de Venta</strong></h2>
+                <button type="button" class="close" id="stop" onclick="cerrarVid7()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo7" controlslist="nodownload">
+                                <source id="videos7" src=@videoUrl7 type="video/mp4"/>
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal8" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="text-shadow:4px 2px 2px black" id="demo"><strong>Administración de Nómina</strong></h2>
+                <button type="button" class="close" id="stop" onclick="cerrarVid8()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo8" controlslist="nodownload">
+                                <source id="videos8" src=@videoUrl8 type="video/mp4" />
+
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal12" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="color:white;text-shadow:2px 2px 2px black;text-align:start" id="demo"><strong>Soluciones Finacieras</strong></h2>
+                <button type="button" class="close" id="stop" onclick="cerrarVid12()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo12" controlslist="nodownload">
+                                <source id="videos12" src=@videoUrl12 type="video/mp4" />
+
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal13" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="color:white;text-shadow:2px 2px 2px black;text-align:start" id="demo"><strong>Pasos Socio Comercial</strong></h2>
+                <button type="button" class="close" id="stop" onclick="cerrarVid13()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo13" controlslist="nodownload">
+                                <source id="videos13" src=@videoUrl13 type="video/mp4" />
+
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input style="display:none" id="Nivel" />
+
+
+<div class="row">
+    <div class="row ml-5">
+
+        <div class="col-sm-4 row">
+
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+
+                        <img src="~/Content/card_page1/1.png" class="card-img" alt="introduccion" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Introduccion</h5>
+
+                            <button class="btn-sm btn-info btn" type="button" data-toggle="modal" data-target="#myModal1">
+                                Reproducir
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-4 row">
+
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+
+                        <img src="~/Content/card_page1/3.png" class="card-img" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Administracion de Efectivo</h5>
+
+                            <button class="btn-sm btn-info btn" type="button" data-toggle="modal" data-target="#myModal2">
+                                Reproducir
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-4 row">
+
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+
+                        <img src="~/Content/card_page1/2.png" class="card-img" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Retornos Financieros</h5>
+
+                            <button class="btn-sm btn-info btn" type="button" data-toggle="modal" data-target="#myModal3">
+                                Reproducir
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-4 row">
+
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+
+                        <img src="~/Content/card_page1/1.png" class="card-img" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Transferencias Internacionales</h5>
+
+                            <button class="btn-sm btn-info btn" type="button" data-toggle="modal" data-target="#myModal4">
+                                Reproducir
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-sm-4 row">
+
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+
+                        <img src="~/Content/card_page1/1.png" class="card-img" alt="introduccion" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Desarrollo Total </h5>
+
+                            <button class="btn-sm btn-info btn" type="button" data-toggle="modal" data-target="#myModal5">
+                                Reproducir
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-4 row">
+
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+
+                        <img src="~/Content/card_page1/1.png" class="card-img" alt="introduccion" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">TC Monedero electrónico </h5>
+
+                            <button class="btn-sm btn-info btn" type="button" data-toggle="modal" data-target="#myModal6">
+                                Reproducir
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-sm-4 row">
+
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+
+                        <img src="~/Content/card_page1/1.png" class="card-img" alt="introduccion" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Terminal Punto de Venta</h5>
+
+                            <button class="btn-sm btn-info btn" type="button" data-toggle="modal" data-target="#myModal7">
+                                Reproducir
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-4 row">
+
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+
+                        <img src="~/Content/card_page1/1.png" class="card-img" alt="introduccion" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Administración de Nómina</h5>
+
+                            <button class="btn-sm btn-info btn" type="button" data-toggle="modal" data-target="#myModal8">
+                                Reproducir
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-4 row">
+
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+
+                        <img src="~/Content/card_page1/1.png" class="card-img" alt="introduccion" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Soluciones Financieras</h5>
+
+                            <button class="btn-sm btn-info btn" type="button" data-toggle="modal" data-target="#myModal12">
+                                Reproducir
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-4 row">
+
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+
+                        <img src="~/Content/card_page1/1.png" class="card-img" alt="introduccion" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Pasos Socio Comercial</h5>
+
+                            <button class="btn-sm btn-info btn" type="button" data-toggle="modal" data-target="#myModal13">
+                                Reproducir
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+         
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+
+
+    var modal1 = document.getElementById("myModal1");
+    var modal2 = document.getElementById("myModal2");
+    var modal3 = document.getElementById("myModal3");
+    var modal4 = document.getElementById("myModal4");
+    var modal5 = document.getElementById("myModal5");
+    var modal6 = document.getElementById("myModal6");
+    var modal7 = document.getElementById("myModal7");
+    var modal8 = document.getElementById("myModal8");
+    var modal9 = document.getElementById("myModal9");
+    var modal10 = document.getElementById("myModal10");
+    var modal11 = document.getElementById("myModal11");
+    var modal12 = document.getElementById("myModal12");
+    var modal13 = document.getElementById("myModal13");
+
+    const video1 = document.getElementById("myvideo1");
+
+    const video2 = document.getElementById("myvideo2");
+
+    const video3 = document.getElementById("myvideo3");
+
+    const video4 = document.getElementById("myvideo4");
+
+    const video5 = document.getElementById("myvideo5");
+
+    const video6 = document.getElementById("myvideo6");
+
+    const video7 = document.getElementById("myvideo7");
+
+    const video8 = document.getElementById("myvideo8");
+
+    const video9 = document.getElementById("myvideo9");
+
+    const video10 = document.getElementById("myvideo10");
+
+    const video11 = document.getElementById("myvideo11");
+
+    const video12 = document.getElementById("myvideo12");
+
+    const video13 = document.getElementById("myvideo13");
+
+    var btn = document.getElementById("myBtn1");
+
+    var btn2 = document.getElementById("myBtn2");
+
+    var btn3 = document.getElementById("myBtn3")
+
+    var btn4 = document.getElementById("myBtn4");
+
+    var btn5 = document.getElementById("myBtn5");
+
+    var btn6 = document.getElementById("myBtn6");
+
+    var btn7 = document.getElementById("myBtn7");
+
+    var btn8 = document.getElementById("myBtn8");
+
+    var btn9 = document.getElementById("myBtn9");
+
+    var btn10 = document.getElementById("myBtn10");
+
+    var btn11 = document.getElementById("myBtn11");
+
+    var btn12 = document.getElementById("myBtn12");
+
+    var btn13 = document.getElementById("myBtn13");
+
+    function cerrarVid1() {
+        modal1.style.display = "none";
+        video1.pause();
+      
+    }
+
+    function cerrarVid2() {
+        modal2.style.display = "none";
+        video2.pause();
+    } 
+       
+        function cerrarVid3() {
+            modal3.style.display = "none";
+            video3.pause();
+            
+           }
+    function cerrarVid4() {
+        modal4.style.display = "none";
+        video4.pause();
+    }
+        function cerrarVid5() {
+            modal5.style.display = "none";
+            video5.pause();
+           
+            }
+    function cerrarVid6() {
+        modal6.style.display = "none";
+        video6.pause();
+        }
+    function cerrarVid7() {
+        modal7.style.display = "none";
+        video7.pause();
+        }
+    function cerrarVid8() {
+        modal8.style.display = "none";
+        video8.pause();
+        }
+    function cerrarVid9() {
+        modal9.style.display = "none";
+        video9.pause();
+       }
+    function cerrarVid10() {
+        modal10.style.display = "none";
+        video10.pause();
+       }
+    function cerrarVid11() {
+        modal11.style.display = "none";
+        video11.pause();
+        }
+    function cerrarVid12() {
+        modal12.style.display = "none";
+        video12.pause();
+       }
+    function cerrarVid13() {
+        modal13.style.display = "none";
+        video13.pause();}
+
+
+    btn.onclick = function () {
+        modal1.style.display = "block";
+        //document.getElementById("videos").src = "https://strategias.blob.core.windows.net/asset-24dc5958-c7b2-4f25-83f6-3bf8cf2b416b/1-introduccion-admin-efectivo.mp4";
+        //document.getElementById("myvideo").load();
+
+
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn2.onclick = function () {
+        modal2.style.display = "block";
+        //document.getElementById("videos").src = "/Videos/Cursos/2-Retornos-financieros%20.mp4";
+        //document.getElementById("myvideo").load();
+
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    //btn3.onclick = function () {
+    //    modal3.style.display = "block";
+    //    // document.getElementById("videos").src = "/Videos/Cursos/3-Transfer-Inter-DT.mp4";
+    //    // document.getElementById("myvideo").load();
+    //    Swal.fire({
+
+    //    icon: 'warning',
+    //        title: 'Nueva Ventana Emergente',
+    //        text: 'Se abrirá una ventana emergente para visualizar el curso',
+    //        showConfirmButton: false,
+    //        timer: 3000,
+    //        showClass: {
+    //    popup: 'animate__animated animate__fadeInDown'
+    //        },
+    //        hideClass: {
+    //    popup: 'animate__animated animate__fadeOutUp'
+    //        }
+
+    //    })
+    //}
+    btn4.onclick = function () {
+        modal4.style.display = "block";
+        //document.getElementById("videos").src = "/Videos/Cursos/4-TC-monedero-electronico.mp4";
+        //document.getElementById("myvideo").load();
+
+
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn5.onclick = function () {
+        modal5.style.display = "block";
+        //document.getElementById("videos").src = "/Videos/Cursos/5-TT-TPV.mp4";
+        //document.getElementById("myvideo").load();
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn6.onclick = function () {
+        modal6.style.display = "block";
+        //document.getElementById("videos").src = "/Videos/Cursos/6-Admin-Nomina.mp4";
+        //document.getElementById("myvideo").load();
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn7.onclick = function () {
+        modal7.style.display = "block";
+        //document.getElementById("videos").src = "/Videos/Cursos/7-Plan-privado-pensiones.mp4";
+        //document.getElementById("myvideo").load();
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn8.onclick = function () {
+        modal8.style.display = "block";
+        //document.getElementById("videos").src = "/Videos/Cursos/8-Sindicatos.mp4";
+        //document.getElementById("myvideo").load();
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn9.onclick = function () {
+        modal9.style.display = "block";
+
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn10.onclick = function () {
+        modal10.style.display = "block";
+        //document.getElementById("videos").src = "/Videos/Cursos/10-PC-Soluciones-Financieras.mp4";
+        //document.getElementById("myvideo").load();
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn11.onclick = function () {
+        modal11.style.display = "block";
+
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn12.onclick = function () {
+        modal12.style.display = "block";
+
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn13.onclick = function () {
+        modal13.style.display = "block";
+
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+
+
+
+    window.onclick = function (event) {
+        if (event.target == modal1) {
+            modal1.style.display = "block";
+        }
+    }
+    window.onclick = function (event) {
+        if (event.target == modal2) {
+            modal2.style.display = "block";
+        }
+    }
+    window.onclick = function (event) {
+        if (event.target == modal3) {
+            modal3.style.display = "block";
+        }
+    }
+    window.onclick = function (event) {
+        if (event.target == modal4) {
+            modal4.style.display = "block";
+        }
+    }
+    video1window.onclick = function (event) {
+        if (event.target == modal5) {
+            modal5.style.display = "block";
+        }
+    }
+    window.onclick = function (event) {
+        if (event.target == modal6) {
+            modal6.style.display = "block";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal7) {
+                modal7.style.display = "block";
+            }
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal8) {
+                modal8.style.display = "block";
+            }
+        }
+        window.onclick = function (event) {
+            if (event.target == modal9) {
+                modal9.style.display = "block";
+            }
+        }
+        window.onclick = function (event) {
+            if (event.target == modal10) {
+                modal10.style.display = "block";
+            }
+        }
+        window.onclick = function (event) {
+            if (event.target == modal11) {
+                modal11.style.display = "block";
+            }
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal12) {
+                modal12.style.display = "block";
+            }
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal13) {
+                modal13.style.display = "block";
+            }
+        }
+
+    }
+
+</script>
+
+<script src="~/Scripts/jquery-3.5.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+

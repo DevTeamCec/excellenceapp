@@ -1,0 +1,157 @@
+﻿@model  Curso.Models.UsuarioLogin
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    @*<link rel="stylesheet" href="~/Content/Contenido/StyleSheet1.css">*@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link href="~/Content/iPhone Media Query.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <link href="~/Content/home.css" rel="stylesheet" />
+</head>
+
+<style>
+
+
+    .background-img {
+        background: url("../../Content/Images/escuela1.png") right no-repeat ;
+        width: 100%;
+    }
+
+    
+</style>
+
+
+<body class="container-fluid" onclick="disableBackButton()">
+    <div style="display: none">
+        <input class="form-control" id="estatus" value="@ViewBag.msg" />
+
+    </div>
+    <div class="row">
+
+        <div class="col-sm-8 background-img">
+           
+        </div>
+        <div class="col-sm-4" style="height: 100vh ">
+
+            <div class="card text-center pt-1 rounded-lg pb-4" style="background-color:white; margin-top: 30%">
+                <div class="card-title" style="align-content:center">
+
+                    <img src="~/Content/Images/excellence_log.png" class="login_logo" />
+
+                </div>
+                <div class="card-body pt-0" style="align-content:center">
+
+
+                    @using (Html.BeginForm("Login", "Home", FormMethod.Post, new { @class = "form-signin  " }))
+                    {
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger pt-2" })
+                        <div class="card-text text-center">
+                            <div>
+                                @Html.TextBoxFor(dl => dl.Txt_Usuario, new { @class = "form-control rounded ", @placeholder = "Usuario" })
+                                @Html.ValidationMessageFor(dl => dl.Txt_Usuario, "", new { @class = "text-danger " })
+                            </div><br />
+                            <div>
+                                @Html.TextBoxFor(dl => dl.Txt_Password, new { @class = "form-control rounded ", @placeholder = "Contraseña", @type = "password", @id = "verPassword" })
+                                @Html.ValidationMessageFor(dl => dl.Txt_Password, "", new { @class = "text-danger " })
+                            </div>
+                        </div>
+                        <br />
+
+                        <button type="submit" class="btn btn-primary fa-7x rounded text-center" onclick="success()">Entrar</button>
+                    }
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+    <script>
+        $('#verPassword').on('mousedown', function () {
+            $('#Txt_Password').attr("type", "text");
+        });
+
+        $('#verPassword').on('mouseup mouseleave', function () {
+            $('#Txt_Password').attr("type", "password");
+        });
+
+        (function () {
+            success();
+        })();
+
+        function success() {
+            var a = document.getElementById("estatus").value;
+            if (a == 1) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Psst! Algo salió mal',
+                    text: 'Contacta a tu Gerente Designado y verifica tu tiempo límite'
+
+                })
+
+                document.getElementById("estatus").value = "";
+            }
+            else if (a == 2) {
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Contraseña  y/o Usuario incorrectos',
+                    text: 'Verifica tus credenciales'
+
+                })
+                document.getElementById("estatus").value = "";
+            }
+            else if (a == 3) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Contraseña Incorrecta',
+
+                })
+                document.getElementById("estatus").value = "";
+            }
+            else {
+                document.getElementById("estatus").value = "";
+            }
+        }
+    </script>
+
+
+
+
+
+    <script src="~/Scripts/jquery-3.5.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+</body>
+

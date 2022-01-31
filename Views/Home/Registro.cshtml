@@ -1,0 +1,417 @@
+﻿@model Curso.Models.Tb_UsuariosCurso
+
+@{
+    ViewBag.Title = "Registro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<SelectListItem> plaza = (List<SelectListItem>)ViewBag.plaza;
+    List<SelectListItem> activo = (List<SelectListItem>)ViewBag.activo;
+    List<SelectListItem> nivel = (List<SelectListItem>)ViewBag.nivel;
+}
+        <head>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+            <style>
+                .form-control {
+                    display: block;
+                    width: 100%;
+                    height: calc(2.25rem + 2px);
+                    padding: .5rem .7rem;
+                    font-size: .875rem;
+                    font-weight: 400;
+                    line-height: 1.428571;
+                    color: hsla(0,0%,100%,.8);
+                    background-color: transparent;
+                    background-clip: padding-box;
+                    border: 1px solid #cad1d7;
+                    border-radius: .25rem;
+                    box-shadow: none;
+                    transition: all .2s cubic-bezier(.68,-.55,.265,1.55);
+                }
+                body {
+                    margin: 0;
+                    padding: 0;
+                    background-color: rgba(232, 229, 229, 0.82);
+                    font-family: 'Century Gothic';
+                    background-image: linear-gradient(to right top, #3f3f3f, #343434, #292929, #1f1f1f, #151515, #1e1e1e, #282828, #323232, #565656, #7d7d7d, #a6a6a6, #d1d1d1);
+                    background-size: 100% 170%;
+                }
+               
+                .card, .card-container{
+                    max-width:870px !important;
+                }
+
+                .card {
+                    width: auto !important;
+                  
+                    z-index: 0;
+                    top: 0px;                                        
+                    padding: 5px 5px 2px;
+                    margin: 0 auto 20px;
+                    margin-top: 12px;
+                    -moz-border-radius: 2px;
+                    box-shadow: 1px 4px 4px darkgrey;
+                }
+                .footer {
+                    bottom: 0;
+                    left: 0;
+                    position: fixed;
+                    width: 100%;
+                    background-color: ghostwhite;
+                    height: 2rem;
+                    text-align: center;
+                    font-size: 18px;
+                    color: black;
+                    -webkit-box-shadow: 4px 6px 6px black;
+                    box-shadow: 4px 6px 6px black;
+                }
+                #center{
+                    text-align:center;
+                }
+
+                .fullwidth{
+                    max-width:100% !important;
+                }
+            
+               
+            </style>
+        </head>                    
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+<form>
+
+    <div class="row">
+        <div class="col-12 pt-3" id="out">
+            <div class="container-fluid" id="center">
+                <div class="card card-container  bg-dark" style="text-shadow:6px 0px 5px black;box-shadow:6px 9px 7px black">
+                    <div class="row-cols-md-12"><h1 style="color:whitesmoke">Registro</h1></div>
+                    <div class="row-cols-md-3"><h4 style="color:whitesmoke" >Gerente:&nbsp;@Session["Txt_Usuario"]</h4></div>
+                       <div style="display: none">
+                           <input type="text" class="form-control"  id="nomGerente" value="@Session["Txt_Usuario"]"/>
+                       </div>
+                    <div class="card-body ">
+                        <div class="form-group">
+                            <div class="row">
+                                <div style="display: none">
+                                    <input class="form-control" id="estatus" value="@ViewBag.msn" />
+
+                                </div>
+
+                                <div class="col-md-2 col-form-label" style="text-align:left"><label style="color:whitesmoke">Nombre</label></div>
+
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.Txt_Usuario, new { htmlAttributes = new { @class = "form-control ", @id = "nombre", @placeholder = "Usuario" } })
+                                    @Html.ValidationMessageFor(model => model.Txt_Usuario, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-md-2" style="display:none"><label style="        color: whitesmoke
+">Fecha Inicio</label></div>
+                                <div class="col-md-4" style="display:none">
+                                    @Html.TextBoxFor(model => model.Fec_Inicio, new { @Value = @DateTime.Now.ToString("yyyy-MM-dd") })
+                                    @Html.ValidationMessageFor(model => model.Fec_Inicio, "", new { @class = "text-danger" })
+
+                                </div>
+                                <div class="col-md-2" style="text-align:left"><label style="color:whitesmoke">Fecha Final</label></div>
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.Fec_Fin, new { @Value = @DateTime.Now.ToString("yyyy-MM-dd"), htmlAttributes = new { @class = "form-control", @placeholder = "Fecha de término", @id = "FechaFin" } })
+                                    @Html.ValidationMessageFor(model => model.Fec_Fin, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+
+                                <div class="col-md-2" style="text-align:left"><label style="color:whitesmoke">Contraseña</label></div>
+
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.Txt_Password, new { htmlAttributes = new { @class = "form-control", @id = "pass", @placeholder = "Contraseña", @type = "password" } })
+                                    @Html.ValidationMessageFor(model => model.Txt_Password, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-2" style="text-align:left"><label style="color:whitesmoke">Nivel Usuario</label></div>
+                                <div class="col-md-4 ">
+                                    @Html.DropDownList("Nivel", nivel, "Selecciona el Nivel", new { @class = "form-control form-control-md", @id = "IdNivel" })
+                                </div>
+                                <div style="display:none">
+
+                                    @Html.EditorFor(model => model.Int_IdNivel, new { htmlAttributes = new { @class = "form-control", @id = "nivel", @placeholder = "Nivel" } })
+                                    @Html.ValidationMessageFor(model => model.Int_IdNivel, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+
+                                
+                                <div class="col-md-2" style="text-align:left"><label style="color:whitesmoke">Plaza</label></div>
+                                <div class="col-md-4">
+                                    @Html.DropDownList("Plaza", plaza, "Selecciona la Plaza", new { @class = "form-control form-control-md", @id = "IdPlaza" })
+                                </div>
+                                <div style="display:none">
+                                    <div style="display:none">
+                                        @Html.EditorFor(model => model.Txt_Gerente, new { htmlAttributes = new { @class = "form-control form-control-md", @id = "gerente", @placeholder = "Nombre del Gerente" } })
+                                        @Html.ValidationMessageFor(model => model.Txt_Gerente, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.Int_IdGerente, new { @Value = @Session["Int_IdUsuario"] })
+                                        @Html.ValidationMessageFor(model => model.Int_IdGerente, "", new { @class = "text-danger" })
+                                        @Html.TextBoxFor(model => model.Bol_Activo, new { @Value = @Session["Bol_Activo"] = 1 })
+                                        @Html.ValidationMessageFor(model => model.Bol_Activo, "", new { @class = "text-danger" })
+                                    </div>
+                                    @Html.EditorFor(model => model.Int_IdPlaza, new { htmlAttributes = new { @readonly = true, @class = "form-control", @id = "plaza", @placeholder = "Plaza" } })
+                                    @Html.ValidationMessageFor(model => model.Int_IdPlaza, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2" style="text-align:left"><label style="color:whitesmoke">Email</label></div>
+                                <div class="col-md-9 ">
+                                    @Html.EditorFor(model => model.Txt_Email, new { htmlAttributes = new { @class = "form-control fullwidth", @id = "mail", @placeholder = "Correo Electrónico" } })
+                                    @Html.ValidationMessageFor(model => model.Txt_Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-12 row">
+                            <div class="col-md-6  ">
+                                <button type="submit" id="postform" onclick="success()" class="btn btn-success"> Crear</button>
+                            </div>
+
+
+                            <div class="col-md-6  ">
+                                <button type="button" onclick="location.href='@Url.Action("Index","Home")'" class="myClass  btn btn-primary">Regresar</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-3"></div>
+
+        <div class="col-6 pt-5" id="print" style="display:none">
+            <div class="container-fluid" id="center">
+                <div class="card card-container  bg-light" width="500">
+                    <h1 style="color:black"><b>Registro</b></h1>
+                    <div style="display: none">
+                        <b>
+                            <input class="form-control form-control-plaintext" id="iduser" value="@ViewBag.id" />
+                        </b>
+                    </div>
+
+                    <div class="card-body" id="formuser">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-5"></div>
+
+
+    </div>
+
+</form>
+}
+
+<script>
+
+    (function () {
+        var session = document.getElementById("nomGerente").value;
+
+        console.log(session);
+            document.getElementById("gerente").value = session;
+    })();
+
+  
+    var cbo2 = document.getElementById("IdPlaza");
+    var cbo3 = document.getElementById("IdNivel");
+
+ 
+    cbo2.addEventListener("change", refresh1);
+    cbo3.addEventListener("change", refresh2);
+
+  
+    function refresh1() {
+        var b = document.getElementById("IdPlaza").value;
+        document.getElementById("plaza").value = b;
+    }
+    function refresh2() {
+        var c = document.getElementById("IdNivel").value;
+        document.getElementById("nivel").value = c;
+    }
+    
+
+    (function () {
+        success();
+    })();
+
+    function success() {
+
+        var a = document.getElementById("estatus").value;
+        if (a == 1) {
+            Swal.fire({
+                icon: 'error',                        
+                title: 'Opps! Algo salió mal',
+                text: "Inténtalo otra vez"
+
+            })
+
+            document.getElementById("estatus").value = "";
+        }
+        else if (a == 2) {
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Guardado con éxito',
+
+            })
+            document.getElementById("estatus").value = "";
+        }
+        else if (a == 3) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Tienes que llenar el Formulario',
+
+            })
+            document.getElementById("estatus").value = "";
+        }
+        else
+        {
+            document.getElementById("estatus").value = "";   
+        }
+        
+          
+        
+      
+    }
+    
+</script>
+
+<script>
+    (function () {
+        buscar()
+    })();
+
+    function buscar()
+    {
+        var id = document.getElementById("iduser").value;
+
+        if (id == "" || id == null)
+        {
+           
+        }
+        else
+        {
+
+            var iduser = document.getElementById("iduser").value;
+            fetch("/Home/buscar" + "?userid=" + +iduser)
+                .then(function (result) {
+
+                    if (result.ok)
+                        return result.json();
+                })
+                .then(function (data) {
+                    var cuerpo = document.getElementById("formuser");
+                    cuerpo.innerHTML = "";
+
+                    for (let item of data) 
+                    {
+                        var fecFin = document.getElementById("FechaFin");
+
+                        fecFin = Date.parse()
+                  
+                        cuerpo.innerHTML = `<div class="form-group" >
+                              
+                            <div class="row">
+                                     <div class=col-sm-2></div>
+                                <div class="col-sm-3 col-form-label" style="text-align:left"><label style="color:black"><b>Nombre:</b></label></div>
+
+                                <div class="col-sm-4 col-form-label">
+                             
+                                  
+                                      <b>      
+                                     <label style="color:black;font-size:20px;"> &nbsp; ${item.Txt_Usuario}</label>  </b>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class=col-sm-2></div>
+                                <div class="col-md-3" style="text-align:left"><label style="color:black"><b>Contraseña</b></label></div>
+                                <div class="col-md-4">
+                                      <b>
+                                     <label style="color:black;font-size:20px;">${item.Txt_Password}</label>
+                                     </b>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class=col-sm-2></div>
+                                <div class="col-md-4" style="text-align:left"><label style="color:black"><b>Correo Electrónico</b></label></div>
+                                <div class="col-md-3">
+                                        <b>
+                                        <label style="color:black;font-size:20px;">${item.Txt_Email}</label>
+                                        </b>
+                                </div>
+                            </div>
+                        </div>
+
+                        @*<div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3" style="text-align:left"><label style="color:whitesmoke">Días</label></div>
+                                <div class="col-md-9">
+
+                                    <input class="form-control form-control-plaintext bg-dark" value="@ViewBag.dias" type="text" readonly />
+
+                                </div>
+                            </div>
+                        </div>*@
+
+
+                        <div class="form-group">
+
+                            <div class="row">
+                                <div class=col-sm-2></div>
+                                <div class="col-md-4" style="text-align:left"><label style="color:black"><b>Fecha Límite de Curso</b></label></div>
+                                <div class="col-md-3 ">
+
+                                          <b>
+                                          <label style="color:black;font-size:20px; width:115px;">${item.Fec_Fin}</label>
+                                          </b>
+                                </div>
+                            </div>
+                        </div>
+  <div class="row">
+                                                                  
+                                      <div class=col-sm-12 pl-3"><a href="http://sysstrategia.azurewebsites.net/">http://sysstrategia.azurewebsites.net/</a></div> 
+                                       </div>
+`
+
+
+                    }
+
+
+                    document.getElementById("print").style.display = "";
+                    document.getElementById("out").style.display = "none";
+                })
+        }
+        
+  
+    }
+
+</script>
+                                                   

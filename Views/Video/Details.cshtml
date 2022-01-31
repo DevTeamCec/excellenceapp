@@ -1,0 +1,99 @@
+﻿@model Curso.Models.Tb_UsuariosCurso
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tb_UsuariosCurso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Txt_Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Txt_Usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Txt_Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Txt_Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Int_IdGerente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Int_IdGerente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Txt_Gerente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Txt_Gerente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Txt_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Txt_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Int_IdPlaza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Int_IdPlaza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Int_IdNivel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Int_IdNivel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fec_Inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fec_Inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fec_Fin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fec_Fin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bol_Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bol_Activo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Int_IdUsuario }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

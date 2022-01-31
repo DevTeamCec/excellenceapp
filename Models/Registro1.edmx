@@ -1,0 +1,1460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SysDesarrolloHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ct_ActivoCursos">
+          <Key>
+            <PropertyRef Name="Bol_Activo" />
+          </Key>
+          <Property Name="Bol_Activo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Txt_Activo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ct_Colores">
+          <Key>
+            <PropertyRef Name="Int_IdColor" />
+          </Key>
+          <Property Name="Int_IdColor" Type="int" Nullable="false" />
+          <Property Name="Txt_Color" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ct_FormaPago">
+          <Key>
+            <PropertyRef Name="Int_IdFormaPago" />
+          </Key>
+          <Property Name="Int_IdFormaPago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Txt_FormaPago" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ct_NivelCursos">
+          <Key>
+            <PropertyRef Name="Int_IdNivel" />
+          </Key>
+          <Property Name="Int_IdNivel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Txt_Nivel" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Ct_Plaza">
+          <Key>
+            <PropertyRef Name="Int_IdPlaza" />
+          </Key>
+          <Property Name="Int_IdPlaza" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Txt_Plaza" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Ct_Roles">
+          <Key>
+            <PropertyRef Name="lng_IdRol" />
+          </Key>
+          <Property Name="lng_IdRol" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Txt_Tipo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ct_Status">
+          <Key>
+            <PropertyRef Name="Int_IdStatus" />
+          </Key>
+          <Property Name="Int_IdStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Txt_Status" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Tb_CarritoCompra">
+          <Key>
+            <PropertyRef Name="Lng_IdCarrito" />
+          </Key>
+          <Property Name="Lng_IdCarrito" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tb_CarritoItem">
+          <Key>
+            <PropertyRef Name="Lng_idCariitoItem" />
+          </Key>
+          <Property Name="Lng_idCariitoItem" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Txt_Producto" Type="nvarchar" MaxLength="250" />
+          <Property Name="Dbl_Precio" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Int_Cantidad" Type="int" />
+          <Property Name="Imagen" Type="image" />
+          <Property Name="Txt_Tipo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Txt_Categoria" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lng_IdCarrito" Type="uniqueidentifier" />
+          <Property Name="Lng_IdProducto" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Tb_Categorias">
+          <Key>
+            <PropertyRef Name="Lng_IdCategoria" />
+          </Key>
+          <Property Name="Lng_IdCategoria" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Txt_Nombre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tb_Contactos">
+          <Key>
+            <PropertyRef Name="Lng_IdContacto" />
+          </Key>
+          <Property Name="Lng_IdContacto" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Txt_Nombres" Type="nvarchar" MaxLength="100" />
+          <Property Name="Txt_Apellidos" Type="nvarchar" MaxLength="10" />
+          <Property Name="Txt_Correo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Txt_Telefono" Type="nvarchar" MaxLength="20" />
+          <Property Name="Txt_Mensaje" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Tb_Direccion">
+          <Key>
+            <PropertyRef Name="Lng_IdDireccion" />
+          </Key>
+          <Property Name="Lng_IdDireccion" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Txt_Calle" Type="nvarchar" MaxLength="150" />
+          <Property Name="Txt_Colonia" Type="nvarchar" MaxLength="150" />
+          <Property Name="Txt_Ciudad" Type="nvarchar" MaxLength="150" />
+          <Property Name="Txt_Estado" Type="nvarchar" MaxLength="150" />
+          <Property Name="Txt_Pais" Type="nvarchar" MaxLength="150" />
+          <Property Name="Txt_CodigoPostal" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lng_IdUsuario" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Tb_ImagenesProductos">
+          <Key>
+            <PropertyRef Name="Lng_IdImagen" />
+          </Key>
+          <Property Name="Lng_IdImagen" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Archivo" Type="image" />
+          <Property Name="Txt_Tipo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Lng_IdProducto" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Tb_Lugares">
+          <Key>
+            <PropertyRef Name="Lng_IdLugar" />
+          </Key>
+          <Property Name="Lng_IdLugar" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Lng_IdProducto" Type="uniqueidentifier" />
+          <Property Name="Txt_Lugar" Type="nvarchar" MaxLength="5" />
+          <Property Name="Bol_Activo" Type="bit" />
+          <Property Name="Txt_Nombre" Type="nvarchar" MaxLength="200" />
+          <Property Name="Txt_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Txt_LigaPago" Type="text" />
+          <Property Name="Txt_Telefono" Type="nvarchar" MaxLength="50" />
+          <Property Name="Int_Color" Type="int" />
+          <Property Name="Int_IdUsuario" Type="uniqueidentifier" />
+          <Property Name="Bol_Compra" Type="bit" />
+          <Property Name="Txt_CodigoApro" Type="nvarchar" MaxLength="200" />
+          <Property Name="Bol_Status" Type="bit" />
+          <Property Name="Fec_Registro" Type="datetime" />
+          <Property Name="Fec_Compra" Type="datetime" />
+          <Property Name="Num_ContadorQR" Type="int" />
+          <Property Name="Int_Tipo" Type="int" />
+        </EntityType>
+        <EntityType Name="Tb_LugaresPases">
+          <Key>
+            <PropertyRef Name="Lng_IdPase" />
+          </Key>
+          <Property Name="Lng_IdPase" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Int_Lugar" Type="int" />
+          <Property Name="Int_Color" Type="int" />
+          <Property Name="Num_ContadorQR" Type="int" />
+          <Property Name="Bol_Status" Type="bit" />
+          <Property Name="Lng_IdLugar" Type="uniqueidentifier" />
+          <Property Name="Int_tipo" Type="int" />
+          <Property Name="Bol_Mesa" Type="bit" />
+          <Property Name="Num_Cantidad" Type="int" />
+          <Property Name="Txt_Nombre" Type="nvarchar" MaxLength="100" />
+          <Property Name="Txt_Nombrec" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Tb_Marca">
+          <Key>
+            <PropertyRef Name="Lng_IdMarca" />
+          </Key>
+          <Property Name="Lng_IdMarca" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Txt_Nombre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tb_Mesas">
+          <Key>
+            <PropertyRef Name="Lng_IdMesas" />
+          </Key>
+          <Property Name="Lng_IdMesas" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Int_IdColor" Type="int" />
+          <Property Name="Dbl_Valor" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="Int_IdStatus" Type="int" />
+          <Property Name="Num_Personas" Type="int" />
+          <Property Name="Num_Mesa" Type="int" />
+          <Property Name="Dbl_ValorPes50" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="Dbl_ValorPes100" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="Dbl_ValorPes10" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="Int_IdFormaPago" Type="int" />
+        </EntityType>
+        <EntityType Name="Tb_OrdenCompra">
+          <Key>
+            <PropertyRef Name="lng_IdOrdenCompra" />
+          </Key>
+          <Property Name="lng_IdOrdenCompra" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Lng_IdOrdenStatus" Type="uniqueidentifier" />
+          <Property Name="Txt_FolioCompra" Type="nvarchar" MaxLength="100" />
+          <Property Name="Txt_Nombre" Type="nvarchar" MaxLength="80" />
+          <Property Name="Txt_Apellidos" Type="nvarchar" MaxLength="250" />
+          <Property Name="Txt_Correo" Type="nvarchar" MaxLength="150" />
+          <Property Name="Dbl_Total" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Int_PagoIntentoId" Type="int" />
+          <Property Name="Txt_MetodoPago" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lng_IdUsuario" Type="uniqueidentifier" />
+          <Property Name="Txt_IdTransaccion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fec_Compra" Type="datetime" />
+          <Property Name="Qr_CodeCompra" Type="nvarchar(max)" />
+          <Property Name="Fec_Creo" Type="datetime" />
+          <Property Name="Txt_Autorizacion" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Tb_OrdenItem">
+          <Key>
+            <PropertyRef Name="Lng_IdOrdenItem" />
+          </Key>
+          <Property Name="Lng_IdOrdenItem" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="lng_IdOrdenCompra" Type="uniqueidentifier" />
+          <Property Name="Txt_Producto" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dbl_Precio" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Int_Cantidad" Type="int" />
+          <Property Name="Fec_Creo" Type="datetime" />
+          <Property Name="Imagen" Type="image" />
+          <Property Name="Txt_Tipo" Type="nvarchar" MaxLength="150" />
+          <Property Name="Lng_IdProducto" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Tb_OrdenStatus">
+          <Key>
+            <PropertyRef Name="Lng_IdOrdenStatus" />
+          </Key>
+          <Property Name="Lng_IdOrdenStatus" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Txt_Status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tb_Productos">
+          <Key>
+            <PropertyRef Name="Lng_IdProducto" />
+          </Key>
+          <Property Name="Lng_IdProducto" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Txt_Nombre" Type="nvarchar" MaxLength="100" />
+          <Property Name="Txt_Sku" Type="nvarchar" MaxLength="150" />
+          <Property Name="Txt_Descripcion" Type="nvarchar(max)" />
+          <Property Name="Int_Stock" Type="int" />
+          <Property Name="Dbl_Precio" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Lng_IdCategoria" Type="uniqueidentifier" />
+          <Property Name="Bol_Activo" Type="bit" />
+          <Property Name="Fec_Registro" Type="datetime" />
+          <Property Name="Fec_Edito" Type="datetime" />
+          <Property Name="Lng_IdUsuario" Type="uniqueidentifier" />
+          <Property Name="WebSitio" Type="int" />
+        </EntityType>
+        <EntityType Name="Tb_Tickets">
+          <Key>
+            <PropertyRef Name="Lnd_IdIvitado" />
+          </Key>
+          <Property Name="Lnd_IdIvitado" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Lng_IdOrdenItem" Type="uniqueidentifier" />
+          <Property Name="Txt_NombreCompleto" Type="nvarchar" MaxLength="250" />
+          <Property Name="Txt_Correo" Type="nvarchar" MaxLength="250" />
+          <Property Name="Txt_Celular" Type="nvarchar" MaxLength="16" />
+          <Property Name="Qr_Code" Type="nvarchar(max)" />
+          <Property Name="Bol_Activo" Type="bit" />
+          <Property Name="Fec_Creo" Type="datetime" />
+          <Property Name="Fec_Edito" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tb_Usuarios">
+          <Key>
+            <PropertyRef Name="Lng_IdUsuario" />
+          </Key>
+          <Property Name="Lng_IdUsuario" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Txt_Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Txt_Apellidos" Type="nvarchar" MaxLength="50" />
+          <Property Name="Txt_Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Txt_Correo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Txt_Celular" Type="nvarchar" MaxLength="50" />
+          <Property Name="Imagen" Type="image" />
+          <Property Name="Fec_Registro" Type="datetime" />
+          <Property Name="Fec_Edito" Type="datetime" />
+          <Property Name="Lng_IdRol" Type="uniqueidentifier" />
+          <Property Name="Bol_Activo" Type="bit" />
+          <Property Name="Txt_SNombre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tb_UsuariosCurso">
+          <Key>
+            <PropertyRef Name="Int_IdUsuario" />
+          </Key>
+          <Property Name="Int_IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Txt_Usuario" Type="nvarchar(max)" />
+          <Property Name="Txt_Password" Type="nvarchar" MaxLength="150" />
+          <Property Name="Int_IdGerente" Type="int" />
+          <Property Name="Txt_Gerente" Type="nvarchar" MaxLength="150" />
+          <Property Name="Txt_Email" Type="nvarchar" MaxLength="250" />
+          <Property Name="Int_IdPlaza" Type="int" />
+          <Property Name="Int_IdNivel" Type="int" />
+          <Property Name="Fec_Inicio" Type="datetime" />
+          <Property Name="Fec_Fin" Type="datetime" />
+          <Property Name="Bol_Activo" Type="int" />
+        </EntityType>
+        <EntityType Name="Tb_Vip">
+          <Key>
+            <PropertyRef Name="Lng_IdVIP" />
+          </Key>
+          <Property Name="Lng_IdVIP" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Bol_Activo" Type="bit" />
+          <Property Name="Txt_Nombre" Type="nvarchar" MaxLength="250" />
+          <Property Name="Txt_EMail" Type="nvarchar" MaxLength="250" />
+          <Property Name="Txt_Telefono" Type="nvarchar" MaxLength="20" />
+          <Property Name="Txt_Codigo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Int_IdStatus" Type="int" />
+          <Property Name="Num_ContadorQR" Type="int" />
+          <Property Name="Bol_Status" Type="bit" />
+          <Property Name="Lng_IdVipCon" Type="uniqueidentifier" />
+          <Property Name="Int_tipo" Type="int" />
+        </EntityType>
+        <EntityType Name="Tb_VipCon">
+          <Key>
+            <PropertyRef Name="Lng_IdVipCon" />
+          </Key>
+          <Property Name="Lng_IdVipCon" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Int_IdTiket" Type="int" />
+          <Property Name="Dbl_PrecioDlls" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="Dbl_Tc" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="Dbl_PrecioPes" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="Por_Gestion" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="Dbl_ValGestion" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="Dbl_Total" Type="numeric" Precision="18" Scale="4" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SysFullPass.sys.database_firewall_rules' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SysFullPass.sys.ipv6_database_firewall_rules' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="ipv6_database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ipv6_address" />
+            <PropertyRef Name="end_ipv6_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ipv6_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ipv6_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Tb_OrdenCompra_Tb_OrdenCompra">
+          <End Role="Tb_OrdenStatus" Type="Self.Tb_OrdenStatus" Multiplicity="0..1" />
+          <End Role="Tb_OrdenCompra" Type="Self.Tb_OrdenCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_OrdenStatus">
+              <PropertyRef Name="Lng_IdOrdenStatus" />
+            </Principal>
+            <Dependent Role="Tb_OrdenCompra">
+              <PropertyRef Name="Lng_IdOrdenStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tb_Productos_Tb_Categorias">
+          <End Role="Tb_Categorias" Type="Self.Tb_Categorias" Multiplicity="0..1" />
+          <End Role="Tb_Productos" Type="Self.Tb_Productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Categorias">
+              <PropertyRef Name="Lng_IdCategoria" />
+            </Principal>
+            <Dependent Role="Tb_Productos">
+              <PropertyRef Name="Lng_IdCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Func_Cuentas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Mesa" Type="nvarchar" MaxLength="5" />
+                <Property Name="color" Type="nvarchar" MaxLength="20" Nullable="false" />
+                <Property Name="nombre" Type="nvarchar" MaxLength="200" />
+                <Property Name="Telefono" Type="nvarchar" MaxLength="50" />
+                <Property Name="pago" Type="nvarchar" MaxLength="4000" />
+                <Property Name="ValorTotal" Type="nvarchar" MaxLength="4000" />
+                <Property Name="ValoraCobrar" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Reserva10M" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Forma" Type="nvarchar" MaxLength="50" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="Func_DatosAzul" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="DolarAzulPendiente" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50AzulPendiente" Type="nvarchar" MaxLength="4000" />
+                <Property Name="DolarAzulReserva" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50AzulReserva" Type="nvarchar" MaxLength="4000" />
+                <Property Name="DolarAzulPagado" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50AzulPagado" Type="nvarchar" MaxLength="4000" />
+                <Property Name="DolarAzulCancelado" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50AzulCancelado" Type="nvarchar" MaxLength="4000" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="Func_DatosRojo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="DolarRojoPendiente" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50RojoPendiente" Type="nvarchar" MaxLength="4000" />
+                <Property Name="DolarRojoReserva" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50RojoReserva" Type="nvarchar" MaxLength="4000" />
+                <Property Name="DolarRojoPagado" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50RojoPagado" Type="nvarchar" MaxLength="4000" />
+                <Property Name="DolarRojoCancelado" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50RojoCancelado" Type="nvarchar" MaxLength="4000" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="Func_DatosRosa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="DolarRosaPendiente" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50RosaPendiente" Type="nvarchar" MaxLength="4000" />
+                <Property Name="DolarRosaReserva" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50RosaReserva" Type="nvarchar" MaxLength="4000" />
+                <Property Name="DolarRosaPagado" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50RosaPagado" Type="nvarchar" MaxLength="4000" />
+                <Property Name="DolarRosaCancelado" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50RosaCancelado" Type="nvarchar" MaxLength="4000" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="Func_DatosVerde" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="DolarVerdePendiente" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50VerdePendiente" Type="nvarchar" MaxLength="4000" />
+                <Property Name="DolarVerdeReserva" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50VerdeReserva" Type="nvarchar" MaxLength="4000" />
+                <Property Name="DolarVerdePagado" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50VerdePagado" Type="nvarchar" MaxLength="4000" />
+                <Property Name="DolarVerdeCancelado" Type="nvarchar" MaxLength="4000" />
+                <Property Name="Pesos50VerdeCancelado" Type="nvarchar" MaxLength="4000" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="Func_Reserva" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Mesa" Type="nvarchar" MaxLength="5" />
+                <Property Name="color" Type="nvarchar" MaxLength="20" Nullable="false" />
+                <Property Name="nombre" Type="nvarchar" MaxLength="200" />
+                <Property Name="Telefono" Type="nvarchar" MaxLength="50" />
+                <Property Name="pago" Type="nvarchar" MaxLength="4000" />
+                <Property Name="ValorTotal" Type="nvarchar" MaxLength="4000" />
+                <Property Name="ValoraCobrar" Type="nvarchar" MaxLength="4000" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <EntityContainer Name="SysDesarrolloHModelStoreContainer">
+          <EntitySet Name="Ct_ActivoCursos" EntityType="Self.Ct_ActivoCursos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ct_Colores" EntityType="Self.Ct_Colores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ct_FormaPago" EntityType="Self.Ct_FormaPago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ct_NivelCursos" EntityType="Self.Ct_NivelCursos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ct_Plaza" EntityType="Self.Ct_Plaza" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ct_Roles" EntityType="Self.Ct_Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ct_Status" EntityType="Self.Ct_Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_CarritoCompra" EntityType="Self.Tb_CarritoCompra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_CarritoItem" EntityType="Self.Tb_CarritoItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Categorias" EntityType="Self.Tb_Categorias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Contactos" EntityType="Self.Tb_Contactos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Direccion" EntityType="Self.Tb_Direccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_ImagenesProductos" EntityType="Self.Tb_ImagenesProductos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Lugares" EntityType="Self.Tb_Lugares" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_LugaresPases" EntityType="Self.Tb_LugaresPases" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Marca" EntityType="Self.Tb_Marca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Mesas" EntityType="Self.Tb_Mesas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_OrdenCompra" EntityType="Self.Tb_OrdenCompra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_OrdenItem" EntityType="Self.Tb_OrdenItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_OrdenStatus" EntityType="Self.Tb_OrdenStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Productos" EntityType="Self.Tb_Productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Tickets" EntityType="Self.Tb_Tickets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Usuarios" EntityType="Self.Tb_Usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_UsuariosCurso" EntityType="Self.Tb_UsuariosCurso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_Vip" EntityType="Self.Tb_Vip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_VipCon" EntityType="Self.Tb_VipCon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ipv6_database_firewall_rules" EntityType="Self.ipv6_database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [ipv6_database_firewall_rules].[id] AS [id], 
+    [ipv6_database_firewall_rules].[name] AS [name], 
+    [ipv6_database_firewall_rules].[start_ipv6_address] AS [start_ipv6_address], 
+    [ipv6_database_firewall_rules].[end_ipv6_address] AS [end_ipv6_address], 
+    [ipv6_database_firewall_rules].[create_date] AS [create_date], 
+    [ipv6_database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[ipv6_database_firewall_rules] AS [ipv6_database_firewall_rules]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Tb_OrdenCompra_Tb_OrdenCompra" Association="Self.FK_Tb_OrdenCompra_Tb_OrdenCompra">
+            <End Role="Tb_OrdenStatus" EntitySet="Tb_OrdenStatus" />
+            <End Role="Tb_OrdenCompra" EntitySet="Tb_OrdenCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tb_Productos_Tb_Categorias" Association="Self.FK_Tb_Productos_Tb_Categorias">
+            <End Role="Tb_Categorias" EntitySet="Tb_Categorias" />
+            <End Role="Tb_Productos" EntitySet="Tb_Productos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SysDesarrolloHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SysDesarrolloHEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ct_Plaza" EntityType="SysDesarrolloHModel.Ct_Plaza" />
+          <EntitySet Name="Ct_NivelCursos" EntityType="SysDesarrolloHModel.Ct_NivelCursos" />
+          <EntitySet Name="Tb_UsuariosCurso" EntityType="SysDesarrolloHModel.Tb_UsuariosCurso" />
+          <EntitySet Name="Ct_ActivoCursos" EntityType="SysDesarrolloHModel.Ct_ActivoCursos" />
+          <EntitySet Name="Ct_Colores" EntityType="SysDesarrolloHModel.Ct_Colores" />
+          <EntitySet Name="Ct_FormaPago" EntityType="SysDesarrolloHModel.Ct_FormaPago" />
+          <EntitySet Name="Ct_Roles" EntityType="SysDesarrolloHModel.Ct_Roles" />
+          <EntitySet Name="Ct_Status" EntityType="SysDesarrolloHModel.Ct_Status" />
+          <EntitySet Name="Tb_CarritoCompra" EntityType="SysDesarrolloHModel.Tb_CarritoCompra" />
+          <EntitySet Name="Tb_CarritoItem" EntityType="SysDesarrolloHModel.Tb_CarritoItem" />
+          <EntitySet Name="Tb_Categorias" EntityType="SysDesarrolloHModel.Tb_Categorias" />
+          <EntitySet Name="Tb_Contactos" EntityType="SysDesarrolloHModel.Tb_Contactos" />
+          <EntitySet Name="Tb_Direccion" EntityType="SysDesarrolloHModel.Tb_Direccion" />
+          <EntitySet Name="Tb_ImagenesProductos" EntityType="SysDesarrolloHModel.Tb_ImagenesProductos" />
+          <EntitySet Name="Tb_Lugares" EntityType="SysDesarrolloHModel.Tb_Lugares" />
+          <EntitySet Name="Tb_LugaresPases" EntityType="SysDesarrolloHModel.Tb_LugaresPases" />
+          <EntitySet Name="Tb_Marca" EntityType="SysDesarrolloHModel.Tb_Marca" />
+          <EntitySet Name="Tb_Mesas" EntityType="SysDesarrolloHModel.Tb_Mesas" />
+          <EntitySet Name="Tb_OrdenCompra" EntityType="SysDesarrolloHModel.Tb_OrdenCompra" />
+          <EntitySet Name="Tb_OrdenItem" EntityType="SysDesarrolloHModel.Tb_OrdenItem" />
+          <EntitySet Name="Tb_OrdenStatus" EntityType="SysDesarrolloHModel.Tb_OrdenStatus" />
+          <EntitySet Name="Tb_Productos" EntityType="SysDesarrolloHModel.Tb_Productos" />
+          <EntitySet Name="Tb_Tickets" EntityType="SysDesarrolloHModel.Tb_Tickets" />
+          <EntitySet Name="Tb_Usuarios" EntityType="SysDesarrolloHModel.Tb_Usuarios" />
+          <EntitySet Name="Tb_Vip" EntityType="SysDesarrolloHModel.Tb_Vip" />
+          <EntitySet Name="Tb_VipCon" EntityType="SysDesarrolloHModel.Tb_VipCon" />
+          <EntitySet Name="database_firewall_rules" EntityType="SysDesarrolloHModel.database_firewall_rules" />
+          <EntitySet Name="ipv6_database_firewall_rules" EntityType="SysDesarrolloHModel.ipv6_database_firewall_rules" />
+          <AssociationSet Name="FK_Tb_Productos_Tb_Categorias" Association="SysDesarrolloHModel.FK_Tb_Productos_Tb_Categorias">
+            <End Role="Tb_Categorias" EntitySet="Tb_Categorias" />
+            <End Role="Tb_Productos" EntitySet="Tb_Productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tb_OrdenCompra_Tb_OrdenCompra" Association="SysDesarrolloHModel.FK_Tb_OrdenCompra_Tb_OrdenCompra">
+            <End Role="Tb_OrdenStatus" EntitySet="Tb_OrdenStatus" />
+            <End Role="Tb_OrdenCompra" EntitySet="Tb_OrdenCompra" />
+          </AssociationSet>
+          <FunctionImport Name="Func_Cuentas" IsComposable="true" ReturnType="Collection(SysDesarrolloHModel.Func_Cuentas_Result)" />
+          <FunctionImport Name="Func_DatosAzul" IsComposable="true" ReturnType="Collection(SysDesarrolloHModel.Func_DatosAzul_Result)" />
+          <FunctionImport Name="Func_DatosRojo" IsComposable="true" ReturnType="Collection(SysDesarrolloHModel.Func_DatosRojo_Result)" />
+          <FunctionImport Name="Func_DatosRosa" IsComposable="true" ReturnType="Collection(SysDesarrolloHModel.Func_DatosRosa_Result)" />
+          <FunctionImport Name="Func_DatosVerde" IsComposable="true" ReturnType="Collection(SysDesarrolloHModel.Func_DatosVerde_Result)" />
+          <FunctionImport Name="Func_Reserva" IsComposable="true" ReturnType="Collection(SysDesarrolloHModel.Func_Reserva_Result)" />
+        </EntityContainer>
+        <EntityType Name="Ct_Plaza">
+          <Key>
+            <PropertyRef Name="Int_IdPlaza" />
+          </Key>
+          <Property Name="Int_IdPlaza" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Txt_Plaza" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ct_NivelCursos">
+          <Key>
+            <PropertyRef Name="Int_IdNivel" />
+          </Key>
+          <Property Name="Int_IdNivel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Txt_Nivel" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tb_UsuariosCurso">
+          <Key>
+            <PropertyRef Name="Int_IdUsuario" />
+          </Key>
+          <Property Name="Int_IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Txt_Usuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Int_IdGerente" Type="Int32" />
+          <Property Name="Txt_Gerente" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Int_IdPlaza" Type="Int32" />
+          <Property Name="Int_IdNivel" Type="Int32" />
+          <Property Name="Fec_Inicio" Type="DateTime" Precision="3" />
+          <Property Name="Fec_Fin" Type="DateTime" Precision="3" />
+          <Property Name="Bol_Activo" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Ct_ActivoCursos">
+          <Key>
+            <PropertyRef Name="Bol_Activo" />
+          </Key>
+          <Property Name="Bol_Activo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Txt_Activo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ct_Colores">
+          <Key>
+            <PropertyRef Name="Int_IdColor" />
+          </Key>
+          <Property Name="Int_IdColor" Type="Int32" Nullable="false" />
+          <Property Name="Txt_Color" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ct_FormaPago">
+          <Key>
+            <PropertyRef Name="Int_IdFormaPago" />
+          </Key>
+          <Property Name="Int_IdFormaPago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Txt_FormaPago" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ct_Roles">
+          <Key>
+            <PropertyRef Name="lng_IdRol" />
+          </Key>
+          <Property Name="lng_IdRol" Type="Guid" Nullable="false" />
+          <Property Name="Txt_Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ct_Status">
+          <Key>
+            <PropertyRef Name="Int_IdStatus" />
+          </Key>
+          <Property Name="Int_IdStatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Txt_Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tb_CarritoCompra">
+          <Key>
+            <PropertyRef Name="Lng_IdCarrito" />
+          </Key>
+          <Property Name="Lng_IdCarrito" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tb_CarritoItem">
+          <Key>
+            <PropertyRef Name="Lng_idCariitoItem" />
+          </Key>
+          <Property Name="Lng_idCariitoItem" Type="Guid" Nullable="false" />
+          <Property Name="Txt_Producto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Dbl_Precio" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Int_Cantidad" Type="Int32" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Txt_Tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Categoria" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Lng_IdCarrito" Type="Guid" />
+          <Property Name="Lng_IdProducto" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Tb_Categorias">
+          <Key>
+            <PropertyRef Name="Lng_IdCategoria" />
+          </Key>
+          <Property Name="Lng_IdCategoria" Type="Guid" Nullable="false" />
+          <Property Name="Txt_Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tb_Productos" Relationship="SysDesarrolloHModel.FK_Tb_Productos_Tb_Categorias" FromRole="Tb_Categorias" ToRole="Tb_Productos" />
+        </EntityType>
+        <EntityType Name="Tb_Contactos">
+          <Key>
+            <PropertyRef Name="Lng_IdContacto" />
+          </Key>
+          <Property Name="Lng_IdContacto" Type="Guid" Nullable="false" />
+          <Property Name="Txt_Nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Apellidos" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Mensaje" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tb_Direccion">
+          <Key>
+            <PropertyRef Name="Lng_IdDireccion" />
+          </Key>
+          <Property Name="Lng_IdDireccion" Type="Guid" Nullable="false" />
+          <Property Name="Txt_Calle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Colonia" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Ciudad" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Estado" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Pais" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_CodigoPostal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lng_IdUsuario" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Tb_ImagenesProductos">
+          <Key>
+            <PropertyRef Name="Lng_IdImagen" />
+          </Key>
+          <Property Name="Lng_IdImagen" Type="Guid" Nullable="false" />
+          <Property Name="Archivo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Txt_Tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Lng_IdProducto" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Tb_Lugares">
+          <Key>
+            <PropertyRef Name="Lng_IdLugar" />
+          </Key>
+          <Property Name="Lng_IdLugar" Type="Guid" Nullable="false" />
+          <Property Name="Lng_IdProducto" Type="Guid" />
+          <Property Name="Txt_Lugar" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Bol_Activo" Type="Boolean" />
+          <Property Name="Txt_Nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_LigaPago" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Txt_Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Int_Color" Type="Int32" />
+          <Property Name="Int_IdUsuario" Type="Guid" />
+          <Property Name="Bol_Compra" Type="Boolean" />
+          <Property Name="Txt_CodigoApro" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Bol_Status" Type="Boolean" />
+          <Property Name="Fec_Registro" Type="DateTime" Precision="3" />
+          <Property Name="Fec_Compra" Type="DateTime" Precision="3" />
+          <Property Name="Num_ContadorQR" Type="Int32" />
+          <Property Name="Int_Tipo" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Tb_LugaresPases">
+          <Key>
+            <PropertyRef Name="Lng_IdPase" />
+          </Key>
+          <Property Name="Lng_IdPase" Type="Guid" Nullable="false" />
+          <Property Name="Int_Lugar" Type="Int32" />
+          <Property Name="Int_Color" Type="Int32" />
+          <Property Name="Num_ContadorQR" Type="Int32" />
+          <Property Name="Bol_Status" Type="Boolean" />
+          <Property Name="Lng_IdLugar" Type="Guid" />
+          <Property Name="Int_tipo" Type="Int32" />
+          <Property Name="Bol_Mesa" Type="Boolean" />
+          <Property Name="Num_Cantidad" Type="Int32" />
+          <Property Name="Txt_Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Nombrec" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tb_Marca">
+          <Key>
+            <PropertyRef Name="Lng_IdMarca" />
+          </Key>
+          <Property Name="Lng_IdMarca" Type="Guid" Nullable="false" />
+          <Property Name="Txt_Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tb_Mesas">
+          <Key>
+            <PropertyRef Name="Lng_IdMesas" />
+          </Key>
+          <Property Name="Lng_IdMesas" Type="Guid" Nullable="false" />
+          <Property Name="Int_IdColor" Type="Int32" />
+          <Property Name="Dbl_Valor" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Int_IdStatus" Type="Int32" />
+          <Property Name="Num_Personas" Type="Int32" />
+          <Property Name="Num_Mesa" Type="Int32" />
+          <Property Name="Dbl_ValorPes50" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Dbl_ValorPes100" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Dbl_ValorPes10" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Int_IdFormaPago" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Tb_OrdenCompra">
+          <Key>
+            <PropertyRef Name="lng_IdOrdenCompra" />
+          </Key>
+          <Property Name="lng_IdOrdenCompra" Type="Guid" Nullable="false" />
+          <Property Name="Lng_IdOrdenStatus" Type="Guid" />
+          <Property Name="Txt_FolioCompra" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Apellidos" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Correo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Dbl_Total" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Int_PagoIntentoId" Type="Int32" />
+          <Property Name="Txt_MetodoPago" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lng_IdUsuario" Type="Guid" />
+          <Property Name="Txt_IdTransaccion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fec_Compra" Type="DateTime" Precision="3" />
+          <Property Name="Qr_CodeCompra" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fec_Creo" Type="DateTime" Precision="3" />
+          <Property Name="Txt_Autorizacion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tb_OrdenStatus" Relationship="SysDesarrolloHModel.FK_Tb_OrdenCompra_Tb_OrdenCompra" FromRole="Tb_OrdenCompra" ToRole="Tb_OrdenStatus" />
+        </EntityType>
+        <EntityType Name="Tb_OrdenItem">
+          <Key>
+            <PropertyRef Name="Lng_IdOrdenItem" />
+          </Key>
+          <Property Name="Lng_IdOrdenItem" Type="Guid" Nullable="false" />
+          <Property Name="lng_IdOrdenCompra" Type="Guid" />
+          <Property Name="Txt_Producto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dbl_Precio" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Int_Cantidad" Type="Int32" />
+          <Property Name="Fec_Creo" Type="DateTime" Precision="3" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Txt_Tipo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Lng_IdProducto" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Tb_OrdenStatus">
+          <Key>
+            <PropertyRef Name="Lng_IdOrdenStatus" />
+          </Key>
+          <Property Name="Lng_IdOrdenStatus" Type="Guid" Nullable="false" />
+          <Property Name="Txt_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tb_OrdenCompra" Relationship="SysDesarrolloHModel.FK_Tb_OrdenCompra_Tb_OrdenCompra" FromRole="Tb_OrdenStatus" ToRole="Tb_OrdenCompra" />
+        </EntityType>
+        <EntityType Name="Tb_Productos">
+          <Key>
+            <PropertyRef Name="Lng_IdProducto" />
+          </Key>
+          <Property Name="Lng_IdProducto" Type="Guid" Nullable="false" />
+          <Property Name="Txt_Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Sku" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Int_Stock" Type="Int32" />
+          <Property Name="Dbl_Precio" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Lng_IdCategoria" Type="Guid" />
+          <Property Name="Bol_Activo" Type="Boolean" />
+          <Property Name="Fec_Registro" Type="DateTime" Precision="3" />
+          <Property Name="Fec_Edito" Type="DateTime" Precision="3" />
+          <Property Name="Lng_IdUsuario" Type="Guid" />
+          <Property Name="WebSitio" Type="Int32" />
+          <NavigationProperty Name="Tb_Categorias" Relationship="SysDesarrolloHModel.FK_Tb_Productos_Tb_Categorias" FromRole="Tb_Productos" ToRole="Tb_Categorias" />
+        </EntityType>
+        <EntityType Name="Tb_Tickets">
+          <Key>
+            <PropertyRef Name="Lnd_IdIvitado" />
+          </Key>
+          <Property Name="Lnd_IdIvitado" Type="Guid" Nullable="false" />
+          <Property Name="Lng_IdOrdenItem" Type="Guid" />
+          <Property Name="Txt_NombreCompleto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Correo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Celular" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Qr_Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Bol_Activo" Type="Boolean" />
+          <Property Name="Fec_Creo" Type="DateTime" Precision="3" />
+          <Property Name="Fec_Edito" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Tb_Usuarios">
+          <Key>
+            <PropertyRef Name="Lng_IdUsuario" />
+          </Key>
+          <Property Name="Lng_IdUsuario" Type="Guid" Nullable="false" />
+          <Property Name="Txt_Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Celular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Fec_Registro" Type="DateTime" Precision="3" />
+          <Property Name="Fec_Edito" Type="DateTime" Precision="3" />
+          <Property Name="Lng_IdRol" Type="Guid" />
+          <Property Name="Bol_Activo" Type="Boolean" />
+          <Property Name="Txt_SNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tb_Vip">
+          <Key>
+            <PropertyRef Name="Lng_IdVIP" />
+          </Key>
+          <Property Name="Lng_IdVIP" Type="Guid" Nullable="false" />
+          <Property Name="Bol_Activo" Type="Boolean" />
+          <Property Name="Txt_Nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_EMail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Txt_Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Int_IdStatus" Type="Int32" />
+          <Property Name="Num_ContadorQR" Type="Int32" />
+          <Property Name="Bol_Status" Type="Boolean" />
+          <Property Name="Lng_IdVipCon" Type="Guid" />
+          <Property Name="Int_tipo" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Tb_VipCon">
+          <Key>
+            <PropertyRef Name="Lng_IdVipCon" />
+          </Key>
+          <Property Name="Lng_IdVipCon" Type="Guid" Nullable="false" />
+          <Property Name="Int_IdTiket" Type="Int32" />
+          <Property Name="Dbl_PrecioDlls" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Dbl_Tc" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Dbl_PrecioPes" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Por_Gestion" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Dbl_ValGestion" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Dbl_Total" Type="Decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="start_ip_address" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="end_ip_address" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ipv6_database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ipv6_address" />
+            <PropertyRef Name="end_ipv6_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="start_ipv6_address" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="end_ipv6_address" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_Tb_Productos_Tb_Categorias">
+          <End Type="SysDesarrolloHModel.Tb_Categorias" Role="Tb_Categorias" Multiplicity="0..1" />
+          <End Type="SysDesarrolloHModel.Tb_Productos" Role="Tb_Productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_Categorias">
+              <PropertyRef Name="Lng_IdCategoria" />
+            </Principal>
+            <Dependent Role="Tb_Productos">
+              <PropertyRef Name="Lng_IdCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tb_OrdenCompra_Tb_OrdenCompra">
+          <End Type="SysDesarrolloHModel.Tb_OrdenStatus" Role="Tb_OrdenStatus" Multiplicity="0..1" />
+          <End Type="SysDesarrolloHModel.Tb_OrdenCompra" Role="Tb_OrdenCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tb_OrdenStatus">
+              <PropertyRef Name="Lng_IdOrdenStatus" />
+            </Principal>
+            <Dependent Role="Tb_OrdenCompra">
+              <PropertyRef Name="Lng_IdOrdenStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="Func_Cuentas_Result">
+          <Property Type="String" Name="Mesa" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="color" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Telefono" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pago" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="ValorTotal" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="ValoraCobrar" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Reserva10M" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Forma" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Func_DatosAzul_Result">
+          <Property Type="String" Name="DolarAzulPendiente" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50AzulPendiente" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="DolarAzulReserva" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50AzulReserva" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="DolarAzulPagado" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50AzulPagado" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="DolarAzulCancelado" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50AzulCancelado" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="Func_DatosRojo_Result">
+          <Property Type="String" Name="DolarRojoPendiente" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50RojoPendiente" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="DolarRojoReserva" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50RojoReserva" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="DolarRojoPagado" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50RojoPagado" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="DolarRojoCancelado" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50RojoCancelado" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="Func_DatosRosa_Result">
+          <Property Type="String" Name="DolarRosaPendiente" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50RosaPendiente" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="DolarRosaReserva" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50RosaReserva" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="DolarRosaPagado" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50RosaPagado" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="DolarRosaCancelado" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50RosaCancelado" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="Func_DatosVerde_Result">
+          <Property Type="String" Name="DolarVerdePendiente" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50VerdePendiente" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="DolarVerdeReserva" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50VerdeReserva" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="DolarVerdePagado" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50VerdePagado" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="DolarVerdeCancelado" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="Pesos50VerdeCancelado" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="Func_Reserva_Result">
+          <Property Type="String" Name="Mesa" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="color" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Telefono" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="pago" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="ValorTotal" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="ValoraCobrar" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SysDesarrolloHModelStoreContainer" CdmEntityContainer="SysDesarrolloHEntities">
+          <EntitySetMapping Name="Ct_Plaza">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Ct_Plaza">
+              <MappingFragment StoreEntitySet="Ct_Plaza">
+                <ScalarProperty Name="Txt_Plaza" ColumnName="Txt_Plaza" />
+                <ScalarProperty Name="Int_IdPlaza" ColumnName="Int_IdPlaza" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ct_NivelCursos">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Ct_NivelCursos">
+              <MappingFragment StoreEntitySet="Ct_NivelCursos">
+                <ScalarProperty Name="Txt_Nivel" ColumnName="Txt_Nivel" />
+                <ScalarProperty Name="Int_IdNivel" ColumnName="Int_IdNivel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_UsuariosCurso">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_UsuariosCurso">
+              <MappingFragment StoreEntitySet="Tb_UsuariosCurso">
+                <ScalarProperty Name="Bol_Activo" ColumnName="Bol_Activo" />
+                <ScalarProperty Name="Fec_Fin" ColumnName="Fec_Fin" />
+                <ScalarProperty Name="Fec_Inicio" ColumnName="Fec_Inicio" />
+                <ScalarProperty Name="Int_IdNivel" ColumnName="Int_IdNivel" />
+                <ScalarProperty Name="Int_IdPlaza" ColumnName="Int_IdPlaza" />
+                <ScalarProperty Name="Txt_Email" ColumnName="Txt_Email" />
+                <ScalarProperty Name="Txt_Gerente" ColumnName="Txt_Gerente" />
+                <ScalarProperty Name="Int_IdGerente" ColumnName="Int_IdGerente" />
+                <ScalarProperty Name="Txt_Password" ColumnName="Txt_Password" />
+                <ScalarProperty Name="Txt_Usuario" ColumnName="Txt_Usuario" />
+                <ScalarProperty Name="Int_IdUsuario" ColumnName="Int_IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ct_ActivoCursos">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Ct_ActivoCursos">
+              <MappingFragment StoreEntitySet="Ct_ActivoCursos">
+                <ScalarProperty Name="Txt_Activo" ColumnName="Txt_Activo" />
+                <ScalarProperty Name="Bol_Activo" ColumnName="Bol_Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ct_Colores">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Ct_Colores">
+              <MappingFragment StoreEntitySet="Ct_Colores">
+                <ScalarProperty Name="Txt_Color" ColumnName="Txt_Color" />
+                <ScalarProperty Name="Int_IdColor" ColumnName="Int_IdColor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ct_FormaPago">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Ct_FormaPago">
+              <MappingFragment StoreEntitySet="Ct_FormaPago">
+                <ScalarProperty Name="Txt_FormaPago" ColumnName="Txt_FormaPago" />
+                <ScalarProperty Name="Int_IdFormaPago" ColumnName="Int_IdFormaPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ct_Roles">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Ct_Roles">
+              <MappingFragment StoreEntitySet="Ct_Roles">
+                <ScalarProperty Name="Txt_Tipo" ColumnName="Txt_Tipo" />
+                <ScalarProperty Name="lng_IdRol" ColumnName="lng_IdRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ct_Status">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Ct_Status">
+              <MappingFragment StoreEntitySet="Ct_Status">
+                <ScalarProperty Name="Txt_Status" ColumnName="Txt_Status" />
+                <ScalarProperty Name="Int_IdStatus" ColumnName="Int_IdStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_CarritoCompra">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_CarritoCompra">
+              <MappingFragment StoreEntitySet="Tb_CarritoCompra">
+                <ScalarProperty Name="Lng_IdCarrito" ColumnName="Lng_IdCarrito" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_CarritoItem">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_CarritoItem">
+              <MappingFragment StoreEntitySet="Tb_CarritoItem">
+                <ScalarProperty Name="Lng_IdProducto" ColumnName="Lng_IdProducto" />
+                <ScalarProperty Name="Lng_IdCarrito" ColumnName="Lng_IdCarrito" />
+                <ScalarProperty Name="Txt_Categoria" ColumnName="Txt_Categoria" />
+                <ScalarProperty Name="Txt_Tipo" ColumnName="Txt_Tipo" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Int_Cantidad" ColumnName="Int_Cantidad" />
+                <ScalarProperty Name="Dbl_Precio" ColumnName="Dbl_Precio" />
+                <ScalarProperty Name="Txt_Producto" ColumnName="Txt_Producto" />
+                <ScalarProperty Name="Lng_idCariitoItem" ColumnName="Lng_idCariitoItem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Categorias">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_Categorias">
+              <MappingFragment StoreEntitySet="Tb_Categorias">
+                <ScalarProperty Name="Txt_Nombre" ColumnName="Txt_Nombre" />
+                <ScalarProperty Name="Lng_IdCategoria" ColumnName="Lng_IdCategoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Contactos">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_Contactos">
+              <MappingFragment StoreEntitySet="Tb_Contactos">
+                <ScalarProperty Name="Txt_Mensaje" ColumnName="Txt_Mensaje" />
+                <ScalarProperty Name="Txt_Telefono" ColumnName="Txt_Telefono" />
+                <ScalarProperty Name="Txt_Correo" ColumnName="Txt_Correo" />
+                <ScalarProperty Name="Txt_Apellidos" ColumnName="Txt_Apellidos" />
+                <ScalarProperty Name="Txt_Nombres" ColumnName="Txt_Nombres" />
+                <ScalarProperty Name="Lng_IdContacto" ColumnName="Lng_IdContacto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Direccion">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_Direccion">
+              <MappingFragment StoreEntitySet="Tb_Direccion">
+                <ScalarProperty Name="Lng_IdUsuario" ColumnName="Lng_IdUsuario" />
+                <ScalarProperty Name="Txt_CodigoPostal" ColumnName="Txt_CodigoPostal" />
+                <ScalarProperty Name="Txt_Pais" ColumnName="Txt_Pais" />
+                <ScalarProperty Name="Txt_Estado" ColumnName="Txt_Estado" />
+                <ScalarProperty Name="Txt_Ciudad" ColumnName="Txt_Ciudad" />
+                <ScalarProperty Name="Txt_Colonia" ColumnName="Txt_Colonia" />
+                <ScalarProperty Name="Txt_Calle" ColumnName="Txt_Calle" />
+                <ScalarProperty Name="Lng_IdDireccion" ColumnName="Lng_IdDireccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_ImagenesProductos">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_ImagenesProductos">
+              <MappingFragment StoreEntitySet="Tb_ImagenesProductos">
+                <ScalarProperty Name="Lng_IdProducto" ColumnName="Lng_IdProducto" />
+                <ScalarProperty Name="Txt_Tipo" ColumnName="Txt_Tipo" />
+                <ScalarProperty Name="Archivo" ColumnName="Archivo" />
+                <ScalarProperty Name="Lng_IdImagen" ColumnName="Lng_IdImagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Lugares">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_Lugares">
+              <MappingFragment StoreEntitySet="Tb_Lugares">
+                <ScalarProperty Name="Int_Tipo" ColumnName="Int_Tipo" />
+                <ScalarProperty Name="Num_ContadorQR" ColumnName="Num_ContadorQR" />
+                <ScalarProperty Name="Fec_Compra" ColumnName="Fec_Compra" />
+                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+                <ScalarProperty Name="Bol_Status" ColumnName="Bol_Status" />
+                <ScalarProperty Name="Txt_CodigoApro" ColumnName="Txt_CodigoApro" />
+                <ScalarProperty Name="Bol_Compra" ColumnName="Bol_Compra" />
+                <ScalarProperty Name="Int_IdUsuario" ColumnName="Int_IdUsuario" />
+                <ScalarProperty Name="Int_Color" ColumnName="Int_Color" />
+                <ScalarProperty Name="Txt_Telefono" ColumnName="Txt_Telefono" />
+                <ScalarProperty Name="Txt_LigaPago" ColumnName="Txt_LigaPago" />
+                <ScalarProperty Name="Txt_Email" ColumnName="Txt_Email" />
+                <ScalarProperty Name="Txt_Nombre" ColumnName="Txt_Nombre" />
+                <ScalarProperty Name="Bol_Activo" ColumnName="Bol_Activo" />
+                <ScalarProperty Name="Txt_Lugar" ColumnName="Txt_Lugar" />
+                <ScalarProperty Name="Lng_IdProducto" ColumnName="Lng_IdProducto" />
+                <ScalarProperty Name="Lng_IdLugar" ColumnName="Lng_IdLugar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_LugaresPases">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_LugaresPases">
+              <MappingFragment StoreEntitySet="Tb_LugaresPases">
+                <ScalarProperty Name="Txt_Nombrec" ColumnName="Txt_Nombrec" />
+                <ScalarProperty Name="Txt_Nombre" ColumnName="Txt_Nombre" />
+                <ScalarProperty Name="Num_Cantidad" ColumnName="Num_Cantidad" />
+                <ScalarProperty Name="Bol_Mesa" ColumnName="Bol_Mesa" />
+                <ScalarProperty Name="Int_tipo" ColumnName="Int_tipo" />
+                <ScalarProperty Name="Lng_IdLugar" ColumnName="Lng_IdLugar" />
+                <ScalarProperty Name="Bol_Status" ColumnName="Bol_Status" />
+                <ScalarProperty Name="Num_ContadorQR" ColumnName="Num_ContadorQR" />
+                <ScalarProperty Name="Int_Color" ColumnName="Int_Color" />
+                <ScalarProperty Name="Int_Lugar" ColumnName="Int_Lugar" />
+                <ScalarProperty Name="Lng_IdPase" ColumnName="Lng_IdPase" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Marca">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_Marca">
+              <MappingFragment StoreEntitySet="Tb_Marca">
+                <ScalarProperty Name="Txt_Nombre" ColumnName="Txt_Nombre" />
+                <ScalarProperty Name="Lng_IdMarca" ColumnName="Lng_IdMarca" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Mesas">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_Mesas">
+              <MappingFragment StoreEntitySet="Tb_Mesas">
+                <ScalarProperty Name="Int_IdFormaPago" ColumnName="Int_IdFormaPago" />
+                <ScalarProperty Name="Dbl_ValorPes10" ColumnName="Dbl_ValorPes10" />
+                <ScalarProperty Name="Dbl_ValorPes100" ColumnName="Dbl_ValorPes100" />
+                <ScalarProperty Name="Dbl_ValorPes50" ColumnName="Dbl_ValorPes50" />
+                <ScalarProperty Name="Num_Mesa" ColumnName="Num_Mesa" />
+                <ScalarProperty Name="Num_Personas" ColumnName="Num_Personas" />
+                <ScalarProperty Name="Int_IdStatus" ColumnName="Int_IdStatus" />
+                <ScalarProperty Name="Dbl_Valor" ColumnName="Dbl_Valor" />
+                <ScalarProperty Name="Int_IdColor" ColumnName="Int_IdColor" />
+                <ScalarProperty Name="Lng_IdMesas" ColumnName="Lng_IdMesas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_OrdenCompra">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_OrdenCompra">
+              <MappingFragment StoreEntitySet="Tb_OrdenCompra">
+                <ScalarProperty Name="Txt_Autorizacion" ColumnName="Txt_Autorizacion" />
+                <ScalarProperty Name="Fec_Creo" ColumnName="Fec_Creo" />
+                <ScalarProperty Name="Qr_CodeCompra" ColumnName="Qr_CodeCompra" />
+                <ScalarProperty Name="Fec_Compra" ColumnName="Fec_Compra" />
+                <ScalarProperty Name="Txt_IdTransaccion" ColumnName="Txt_IdTransaccion" />
+                <ScalarProperty Name="Lng_IdUsuario" ColumnName="Lng_IdUsuario" />
+                <ScalarProperty Name="Txt_MetodoPago" ColumnName="Txt_MetodoPago" />
+                <ScalarProperty Name="Int_PagoIntentoId" ColumnName="Int_PagoIntentoId" />
+                <ScalarProperty Name="Dbl_Total" ColumnName="Dbl_Total" />
+                <ScalarProperty Name="Txt_Correo" ColumnName="Txt_Correo" />
+                <ScalarProperty Name="Txt_Apellidos" ColumnName="Txt_Apellidos" />
+                <ScalarProperty Name="Txt_Nombre" ColumnName="Txt_Nombre" />
+                <ScalarProperty Name="Txt_FolioCompra" ColumnName="Txt_FolioCompra" />
+                <ScalarProperty Name="Lng_IdOrdenStatus" ColumnName="Lng_IdOrdenStatus" />
+                <ScalarProperty Name="lng_IdOrdenCompra" ColumnName="lng_IdOrdenCompra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_OrdenItem">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_OrdenItem">
+              <MappingFragment StoreEntitySet="Tb_OrdenItem">
+                <ScalarProperty Name="Lng_IdProducto" ColumnName="Lng_IdProducto" />
+                <ScalarProperty Name="Txt_Tipo" ColumnName="Txt_Tipo" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Fec_Creo" ColumnName="Fec_Creo" />
+                <ScalarProperty Name="Int_Cantidad" ColumnName="Int_Cantidad" />
+                <ScalarProperty Name="Dbl_Precio" ColumnName="Dbl_Precio" />
+                <ScalarProperty Name="Txt_Producto" ColumnName="Txt_Producto" />
+                <ScalarProperty Name="lng_IdOrdenCompra" ColumnName="lng_IdOrdenCompra" />
+                <ScalarProperty Name="Lng_IdOrdenItem" ColumnName="Lng_IdOrdenItem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_OrdenStatus">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_OrdenStatus">
+              <MappingFragment StoreEntitySet="Tb_OrdenStatus">
+                <ScalarProperty Name="Txt_Status" ColumnName="Txt_Status" />
+                <ScalarProperty Name="Lng_IdOrdenStatus" ColumnName="Lng_IdOrdenStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Productos">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_Productos">
+              <MappingFragment StoreEntitySet="Tb_Productos">
+                <ScalarProperty Name="WebSitio" ColumnName="WebSitio" />
+                <ScalarProperty Name="Lng_IdUsuario" ColumnName="Lng_IdUsuario" />
+                <ScalarProperty Name="Fec_Edito" ColumnName="Fec_Edito" />
+                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+                <ScalarProperty Name="Bol_Activo" ColumnName="Bol_Activo" />
+                <ScalarProperty Name="Lng_IdCategoria" ColumnName="Lng_IdCategoria" />
+                <ScalarProperty Name="Dbl_Precio" ColumnName="Dbl_Precio" />
+                <ScalarProperty Name="Int_Stock" ColumnName="Int_Stock" />
+                <ScalarProperty Name="Txt_Descripcion" ColumnName="Txt_Descripcion" />
+                <ScalarProperty Name="Txt_Sku" ColumnName="Txt_Sku" />
+                <ScalarProperty Name="Txt_Nombre" ColumnName="Txt_Nombre" />
+                <ScalarProperty Name="Lng_IdProducto" ColumnName="Lng_IdProducto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Tickets">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_Tickets">
+              <MappingFragment StoreEntitySet="Tb_Tickets">
+                <ScalarProperty Name="Fec_Edito" ColumnName="Fec_Edito" />
+                <ScalarProperty Name="Fec_Creo" ColumnName="Fec_Creo" />
+                <ScalarProperty Name="Bol_Activo" ColumnName="Bol_Activo" />
+                <ScalarProperty Name="Qr_Code" ColumnName="Qr_Code" />
+                <ScalarProperty Name="Txt_Celular" ColumnName="Txt_Celular" />
+                <ScalarProperty Name="Txt_Correo" ColumnName="Txt_Correo" />
+                <ScalarProperty Name="Txt_NombreCompleto" ColumnName="Txt_NombreCompleto" />
+                <ScalarProperty Name="Lng_IdOrdenItem" ColumnName="Lng_IdOrdenItem" />
+                <ScalarProperty Name="Lnd_IdIvitado" ColumnName="Lnd_IdIvitado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Usuarios">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_Usuarios">
+              <MappingFragment StoreEntitySet="Tb_Usuarios">
+                <ScalarProperty Name="Txt_SNombre" ColumnName="Txt_SNombre" />
+                <ScalarProperty Name="Bol_Activo" ColumnName="Bol_Activo" />
+                <ScalarProperty Name="Lng_IdRol" ColumnName="Lng_IdRol" />
+                <ScalarProperty Name="Fec_Edito" ColumnName="Fec_Edito" />
+                <ScalarProperty Name="Fec_Registro" ColumnName="Fec_Registro" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="Txt_Celular" ColumnName="Txt_Celular" />
+                <ScalarProperty Name="Txt_Correo" ColumnName="Txt_Correo" />
+                <ScalarProperty Name="Txt_Password" ColumnName="Txt_Password" />
+                <ScalarProperty Name="Txt_Apellidos" ColumnName="Txt_Apellidos" />
+                <ScalarProperty Name="Txt_Nombre" ColumnName="Txt_Nombre" />
+                <ScalarProperty Name="Lng_IdUsuario" ColumnName="Lng_IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_Vip">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_Vip">
+              <MappingFragment StoreEntitySet="Tb_Vip">
+                <ScalarProperty Name="Int_tipo" ColumnName="Int_tipo" />
+                <ScalarProperty Name="Lng_IdVipCon" ColumnName="Lng_IdVipCon" />
+                <ScalarProperty Name="Bol_Status" ColumnName="Bol_Status" />
+                <ScalarProperty Name="Num_ContadorQR" ColumnName="Num_ContadorQR" />
+                <ScalarProperty Name="Int_IdStatus" ColumnName="Int_IdStatus" />
+                <ScalarProperty Name="Txt_Codigo" ColumnName="Txt_Codigo" />
+                <ScalarProperty Name="Txt_Telefono" ColumnName="Txt_Telefono" />
+                <ScalarProperty Name="Txt_EMail" ColumnName="Txt_EMail" />
+                <ScalarProperty Name="Txt_Nombre" ColumnName="Txt_Nombre" />
+                <ScalarProperty Name="Bol_Activo" ColumnName="Bol_Activo" />
+                <ScalarProperty Name="Lng_IdVIP" ColumnName="Lng_IdVIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_VipCon">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.Tb_VipCon">
+              <MappingFragment StoreEntitySet="Tb_VipCon">
+                <ScalarProperty Name="Dbl_Total" ColumnName="Dbl_Total" />
+                <ScalarProperty Name="Dbl_ValGestion" ColumnName="Dbl_ValGestion" />
+                <ScalarProperty Name="Por_Gestion" ColumnName="Por_Gestion" />
+                <ScalarProperty Name="Dbl_PrecioPes" ColumnName="Dbl_PrecioPes" />
+                <ScalarProperty Name="Dbl_Tc" ColumnName="Dbl_Tc" />
+                <ScalarProperty Name="Dbl_PrecioDlls" ColumnName="Dbl_PrecioDlls" />
+                <ScalarProperty Name="Int_IdTiket" ColumnName="Int_IdTiket" />
+                <ScalarProperty Name="Lng_IdVipCon" ColumnName="Lng_IdVipCon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ipv6_database_firewall_rules">
+            <EntityTypeMapping TypeName="SysDesarrolloHModel.ipv6_database_firewall_rules">
+              <MappingFragment StoreEntitySet="ipv6_database_firewall_rules">
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="end_ipv6_address" ColumnName="end_ipv6_address" />
+                <ScalarProperty Name="start_ipv6_address" ColumnName="start_ipv6_address" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Func_Cuentas" FunctionName="SysDesarrolloHModel.Store.Func_Cuentas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SysDesarrolloHModel.Func_Cuentas_Result">
+                <ScalarProperty Name="Mesa" ColumnName="Mesa" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="pago" ColumnName="pago" />
+                <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+                <ScalarProperty Name="ValoraCobrar" ColumnName="ValoraCobrar" />
+                <ScalarProperty Name="Reserva10M" ColumnName="Reserva10M" />
+                <ScalarProperty Name="Forma" ColumnName="Forma" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Func_DatosAzul" FunctionName="SysDesarrolloHModel.Store.Func_DatosAzul">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SysDesarrolloHModel.Func_DatosAzul_Result">
+                <ScalarProperty Name="DolarAzulPendiente" ColumnName="DolarAzulPendiente" />
+                <ScalarProperty Name="Pesos50AzulPendiente" ColumnName="Pesos50AzulPendiente" />
+                <ScalarProperty Name="DolarAzulReserva" ColumnName="DolarAzulReserva" />
+                <ScalarProperty Name="Pesos50AzulReserva" ColumnName="Pesos50AzulReserva" />
+                <ScalarProperty Name="DolarAzulPagado" ColumnName="DolarAzulPagado" />
+                <ScalarProperty Name="Pesos50AzulPagado" ColumnName="Pesos50AzulPagado" />
+                <ScalarProperty Name="DolarAzulCancelado" ColumnName="DolarAzulCancelado" />
+                <ScalarProperty Name="Pesos50AzulCancelado" ColumnName="Pesos50AzulCancelado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Func_DatosRojo" FunctionName="SysDesarrolloHModel.Store.Func_DatosRojo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SysDesarrolloHModel.Func_DatosRojo_Result">
+                <ScalarProperty Name="DolarRojoPendiente" ColumnName="DolarRojoPendiente" />
+                <ScalarProperty Name="Pesos50RojoPendiente" ColumnName="Pesos50RojoPendiente" />
+                <ScalarProperty Name="DolarRojoReserva" ColumnName="DolarRojoReserva" />
+                <ScalarProperty Name="Pesos50RojoReserva" ColumnName="Pesos50RojoReserva" />
+                <ScalarProperty Name="DolarRojoPagado" ColumnName="DolarRojoPagado" />
+                <ScalarProperty Name="Pesos50RojoPagado" ColumnName="Pesos50RojoPagado" />
+                <ScalarProperty Name="DolarRojoCancelado" ColumnName="DolarRojoCancelado" />
+                <ScalarProperty Name="Pesos50RojoCancelado" ColumnName="Pesos50RojoCancelado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Func_DatosRosa" FunctionName="SysDesarrolloHModel.Store.Func_DatosRosa">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SysDesarrolloHModel.Func_DatosRosa_Result">
+                <ScalarProperty Name="DolarRosaPendiente" ColumnName="DolarRosaPendiente" />
+                <ScalarProperty Name="Pesos50RosaPendiente" ColumnName="Pesos50RosaPendiente" />
+                <ScalarProperty Name="DolarRosaReserva" ColumnName="DolarRosaReserva" />
+                <ScalarProperty Name="Pesos50RosaReserva" ColumnName="Pesos50RosaReserva" />
+                <ScalarProperty Name="DolarRosaPagado" ColumnName="DolarRosaPagado" />
+                <ScalarProperty Name="Pesos50RosaPagado" ColumnName="Pesos50RosaPagado" />
+                <ScalarProperty Name="DolarRosaCancelado" ColumnName="DolarRosaCancelado" />
+                <ScalarProperty Name="Pesos50RosaCancelado" ColumnName="Pesos50RosaCancelado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Func_DatosVerde" FunctionName="SysDesarrolloHModel.Store.Func_DatosVerde">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SysDesarrolloHModel.Func_DatosVerde_Result">
+                <ScalarProperty Name="DolarVerdePendiente" ColumnName="DolarVerdePendiente" />
+                <ScalarProperty Name="Pesos50VerdePendiente" ColumnName="Pesos50VerdePendiente" />
+                <ScalarProperty Name="DolarVerdeReserva" ColumnName="DolarVerdeReserva" />
+                <ScalarProperty Name="Pesos50VerdeReserva" ColumnName="Pesos50VerdeReserva" />
+                <ScalarProperty Name="DolarVerdePagado" ColumnName="DolarVerdePagado" />
+                <ScalarProperty Name="Pesos50VerdePagado" ColumnName="Pesos50VerdePagado" />
+                <ScalarProperty Name="DolarVerdeCancelado" ColumnName="DolarVerdeCancelado" />
+                <ScalarProperty Name="Pesos50VerdeCancelado" ColumnName="Pesos50VerdeCancelado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Func_Reserva" FunctionName="SysDesarrolloHModel.Store.Func_Reserva">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SysDesarrolloHModel.Func_Reserva_Result">
+                <ScalarProperty Name="Mesa" ColumnName="Mesa" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="pago" ColumnName="pago" />
+                <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
+                <ScalarProperty Name="ValoraCobrar" ColumnName="ValoraCobrar" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

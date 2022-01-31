@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Curso.Models.Tb_UsuariosCurso>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Txt_Usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Txt_Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Int_IdGerente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Txt_Gerente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Txt_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Int_IdPlaza)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Int_IdNivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fec_Inicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fec_Fin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bol_Activo)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Txt_Usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Txt_Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Int_IdGerente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Txt_Gerente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Txt_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Int_IdPlaza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Int_IdNivel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fec_Inicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fec_Fin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bol_Activo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Int_IdUsuario }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Int_IdUsuario }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Int_IdUsuario })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

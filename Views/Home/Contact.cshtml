@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .footer {
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        background-color: rgba(245, 245, 245, 0.83);
+        height: 2rem;
+        text-align: center;
+        color: white;
+        -webkit-box-shadow: 4px 6px 6px black;
+        box-shadow: 4px 6px 6px black;
+        color: black;
+    }
+
+    .background {
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#aebcbf+0,6e7774+64,0a0e0a+65,0a0809+100 */
+        background-image: linear-gradient(to right top, #3f3f3f, #343434, #292929, #1f1f1f, #151515, #1e1e1e, #282828, #323232, #565656, #7d7d7d, #a6a6a6, #d1d1d1);
+        background-size: 100% 170%;
+    }
+
+    .card {
+        left: 0%;
+        width: 100% !important;
+        height: 250px;
+        position: center;
+        z-index: 0;
+    }
+
+
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 0 auto; /* 15% from the top and centered */
+        padding: 0;
+        width: 100%; /* Could be more or less, depending on screen size */
+        height: auto !important;
+    }
+
+    .modal {
+        background-color: rgba(0, 0, 0, 0.79)
+    }
+
+    .modal-content, .modal-header, .modal-footer {
+        background-color: rgb(23, 26, 25);
+        padding-top: 1px;
+        color: white;
+    }
+
+    .close {
+        float: left;
+        color: whitesmoke;
+    }
+
+    .vertical-center {
+        margin: 0;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+</style>
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+<div class="row">
+
+
+    <div class="col-6">
+        <div class="jumbotron">
+            <h1>@ViewBag.Message</h1>   <br /><br />
+            <h5>
+                Carlos Mario Mederos<br /> <br />
+                Programador Jr <br /><br />
+                Administrador VTiger<br />
+                <br />
+                Consorcio Empresarial Century
+            </h5>
+            <br /><br />
+            <address>
+                <strong>Soporte:</strong>   <a href="mailto:cmederos@strategias.mx">cmederos@strategias.mx</a><br />
+
+            </address>
+        </div>
+    </div>
+    <div class="col-6 jumbotron">
+        @if (ViewBag.Error != null)
+        {
+        <script>
+            Swal.fire({
+                icon: 'warning',
+                title: 'El mensaje no se pudo enviar',
+                text: '¡Entendido!',
+                showConfirmButton: true,
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            })
+        </script>
+        }
+        @if (ViewBag.Success != null)
+        {
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'El mensaje se envió con éxito',
+                    text: '¡Entendido!',
+                    showConfirmButton: true,
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                })
+            </script>
+        }
+        <form method="post"
+              action="Contact">
+            <div class="container">
+                <span class="form-control-static">
+                    Nombre:
+                </span>
+                <input class="form-control" type="text" name="name" />
+                <br />
+                <span class="form-control-static">
+                    Correo:
+                </span>
+                <input class="form-control" type="text" name="mail" />
+                <br />
+                <span class="form-control-static">
+                    Encabezado:
+                </span>
+
+                <input class="form-control" type="text" name="subject" />
+                <br />
+                <span class="form-control-static">
+                    Mensaje:
+                </span>
+                <textarea class="form-control form-control" type="text" name="message"></textarea>
+                <br />
+                <input class="btn btn-primary" type="submit" value="Send" />
+            </div>
+        </form>
+    </div>
+</div>

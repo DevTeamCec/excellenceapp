@@ -1,0 +1,802 @@
+﻿
+<head>
+    <link href="/Content/StyleSheet1.css" rel="stylesheet" />
+    <link href="~/Content/SlideshowStyle.css" rel="stylesheet" />
+</head>
+<style>
+    .footer {
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        background-color: rgba(245, 245, 245, 0.83);
+        height: 2rem;
+        text-align: center;
+        color: white;
+        -webkit-box-shadow: 4px 6px 6px black;
+        box-shadow: 4px 6px 6px black;
+        color: black;
+    }
+
+    .background {
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#aebcbf+0,6e7774+64,0a0e0a+65,0a0809+100 */
+        background-image: linear-gradient(to right top, #3f3f3f, #343434, #292929, #1f1f1f, #151515, #1e1e1e, #282828, #323232, #565656, #7d7d7d, #a6a6a6, #d1d1d1);
+        background-size: 100% 170%;
+    }
+
+    .card {
+        left: 0%;
+        width: 100% !important;
+        height: 250px;
+        position: center;
+        z-index: 0;
+    }
+
+
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 0 auto; /* 15% from the top and centered */
+        padding: 0;
+        width: 100%; /* Could be more or less, depending on screen size */
+        height: auto !important;
+    }
+
+    .modal {
+        background-color: rgba(0, 0, 0, 0.79)
+    }
+
+    .modal-content, .modal-header, .modal-footer {
+        background-color: rgb(23, 26, 25);
+        padding-top: 1px;
+        color: white;
+    }
+
+    .close {
+        float: left;
+        color: whitesmoke;
+    }
+
+    .vertical-center {
+        margin: 0;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+
+
+<div class="modal fade " id="myModal1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="text-shadow:4px 2px 2px black" id="demo"><strong>Conversión de Prospectos a Oportunidad</strong></h2>
+                <button type="button" class="close" onclick="cerrarVid1()" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo1" controlslist="nodownload">
+                                <source id="videos1" src="../../Videos/VTiger/Conversión de prospectos a oportunidad en CRM CEC.mp4" type="video/mp4" />
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal2" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header  ">
+                <h2 class="modal-title" style="text-shadow:4px 2px 2px black;position:center;" id="demo"><strong>Creación y gestión de eventos</strong></h2>
+                <button type="button" class="close" id="close2" onclick="cerrarVid2()" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo2" controlslist="nodownload">
+                                <source id="videos2" src="../../Videos/VTiger/Creacion y gestión de eventos en CRM CEC.mp4" type="video/mp4" />
+
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal3" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="text-shadow:4px 2px 2px black;position:center;" id="demo"><strong>Creación de propuestas</strong></h2>
+                <button type="button" class="close" id="stop" onclick="cerrarVid3()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo3" controlslist="nodownload">
+                                <source id="videos3" src="../../Videos/VTiger/Creación de propuestas en CRM CEC.mp4" type="video/mp4" />
+
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal4" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="text-shadow:4px 2px 2px black;position:center;" id="demo"><strong>Creación de prospectos</strong></h2>
+                <button type="button" class="close" id="stop" onclick="cerrarVid4()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo4" controlslist="nodownload">
+                                <source id="videos4" src="../../Videos/VTiger/Creación de prospectos en CRM CEC.mp4" type="video/mp4" />
+
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal5" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="text-shadow:4px 2px 2px black;position:center;" id="demo"><strong>Gestión de Oportunidades</strong></h2>
+                <button type="button" class="close" id="stop" onclick="cerrarVid5()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo5" controlslist="nodownload">
+                                <source id="videos5" src="../../Videos/VTiger/Gestión de Oportunidades en CRM CEC.mp4" type="video/mp4" />
+
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal6" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="text-shadow:4px 2px 2px black" id="demo"><strong>Gestión de registros relacionados</strong></h2>
+                <button type="button" class="close" id="stop" onclick="cerrarVid6()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo6" controlslist="nodownload">
+                                <source id="videos6" src="../../Videos/VTiger/Gestión de registros relacionados en CRM CEC.mp4" type="video/mp4" />
+
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal7" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="text-shadow:4px 2px 2px black" id="demo"><strong>Proceso comercial en CRM</strong></h2>
+                <button type="button" class="close" id="stop" onclick="cerrarVid7()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo7" controlslist="nodownload">
+                                <source id="videos7" src="../../Videos/VTiger/Proceso comercial en CRM CEC.mp4" type="video/mp4" />
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade " id="myModal8" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h2 class="modal-title " style="text-shadow:4px 2px 2px black" id="demo"><strong>Proceso comercial EXCEL</strong></h2>
+                <button type="button" class="close" id="stop" onclick="cerrarVid8()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div id="video1">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div class="player">
+                            <video controls id="myvideo8" controlslist="nodownload">
+                                <source id="videos8" src="../../Videos/VTiger/Proceso comercial EXCEL en CRM CEC.mp4" type="video/mp4" />
+
+                                <div class="timer">
+                                    <div></div>
+                                    <span aria-label="timer">00:00</span>
+                                </div>
+                            </video>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<input style="display:none" id="Nivel" />
+<div class="row">
+    <div class="col-md-12">
+        <div class="jumbotron-fluid text-center">
+            <h5 class="" style="font-size:50px;color:whitesmoke; font-family:serif; text-shadow:4px 2px 4px black">Material VTiger </h5>
+        </div>
+    </div>
+    <!-- Slideshow container -->
+    <div class="col-sm-12 pt-md-5">
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade-in ">
+                <div class="container-fluid">
+                    <div class="card bg-dark " style="box-shadow:6px 9px 7px black;">
+                        <div class="card-title">
+                            <h1 style="color:white;text-shadow:2px 2px 2px black;text-align:center">Conversión de Prospectos a Oportunidad</h1>
+                        </div>
+                        <div class="card-footer">
+                            <button id="myBtn1" type="submit" name="opc" class=" btn  vertical-center btn-primary text-center " data-toggle="modal" data-target="#myModal1" value="1" style="box-shadow:2px 4px 4px rgba(13, 13, 13, 0.87)">
+                                <small class="card-title text-justify" style="color:whitesmoke;text-shadow:6px 0px 5px black"><strong>Presiona para <br />    comenzar</strong></small>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mySlides fade-in">
+                <div class="container-fluid">
+                    <div class="card bg-dark " style="box-shadow:6px 9px 7px black;">
+                        <div class="card-title">
+                            <h1 class="text-center" style="color:white;text-shadow:2px 2px 2px black;text-align:center">
+                                Creación de Propuestas
+                            </h1>
+                        </div>
+                        <div class="card-footer">
+                            <button id="myBtn2" name="opc" value="2" class=" btn vertical-center btn-primary  text-center" data-toggle="modal" data-target="#myModal2" style="box-shadow:2px 4px  4px rgba(13, 13, 13, 0.87)">
+                                <small class="card-title text-center" style="color:whitesmoke;text-shadow:6px 0px 5px black"><strong>Presiona para <br />    comenzar</strong></small>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mySlides fade-in" >
+                    <div class="container-fluid">
+                        <div class="card bg-dark " style="box-shadow:6px 9px 7px black;">
+                            <div class="card-title">
+                                <h1 class="text-center" style="color:white;text-shadow:2px 2px 2px black;text-align:start">Creación de Prospectos</h1>
+                            </div>
+                            <div class="card-footer">
+                                <button id="myBtn3" name="opc" value="3" class="btn vertical-center btn-primary align-items-center " style="box-shadow:2px 4px  4px rgba(13, 13, 13, 0.87)" data-toggle="modal" data-target="#myModal3">
+                                    <small class="card-title text-center " style="color:whitesmoke;text-shadow:6px 0px 5px black"><strong>Presiona para <br />    comenzar</strong></small>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            <div class="mySlides fade-in">
+                <div class="container-fluid">
+                    <div class="card bg-dark " style="box-shadow:6px 9px 7px black;">
+                        <div class="card-title">
+                            <h1 class="text-center" style="color:white;text-shadow:2px 2px 2px black;text-align:center">Creación y Gestión de Eventos</h1>
+                        </div>
+                        <div class="card-footer">
+                            <button id="myBtn4" name="opc" value="4" class="btn  vertical-center btn-primary" style="box-shadow:2px 4px  4px rgba(13, 13, 13, 0.87)" data-toggle="modal" data-target="#myModal4">
+                                <small class="card-title text-center" id="title" style="color:whitesmoke;text-shadow:6px 0px 5px black"><strong>Presiona para <br />    comenzar</strong></small>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="mySlides fade-in">
+                <div class="container-fluid">
+                    <div class="card bg-dark " style="box-shadow:6px 9px 7px black;">
+                        <div class="card-title">
+                            <h1 class="text-center" style="color:white;text-shadow:2px 2px 2px black;text-align:center">Gestión de Registros Relacionados</h1>
+                        </div>
+
+                        <div class="card-footer">
+                            <button id="myBtn5" name="opc" value="5" type="button" onclick="changeVid();" style="box-shadow:2px 4px  4px rgba(13, 13, 13, 0.87)" class="btn vertical-center btn-primary " data-toggle="modal" data-target="#myModal5">
+                                <small class="card-title text-center " id="title" style="color:whitesmoke;text-shadow:6px 0px 5px black"><strong>Presiona para <br />    comenzar</strong></small>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mySlides fade-in">
+                <div class="container-fluid">
+                    <div class="card bg-dark " style="box-shadow:6px 9px 7px black;">
+                        <div class="card-title">
+                            <h1 class="text-center" style="color:white;text-shadow:2px 2px 2px black;text-align:center">Proceso Comercial</h1>
+                        </div>
+                        <div class="card-footer">
+                            <button id="myBtn6" name="opc" value="6" class="btn  vertical-center btn-primary  text-center " style="box-shadow:2px 4px  4px rgba(13, 13, 13, 0.87)" data-toggle="modal" data-target="#myModal6">
+                                <small class="card-title text-center" style="color:whitesmoke;text-shadow:6px 0px 5px black"><strong>Presiona para <br />    comenzar</strong></small>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mySlides fade-in">
+                <div class="container-fluid">
+                    <div class="card bg-dark " style="box-shadow:6px 9px 7px black;">
+                        <div class="card-title">
+                            <h1 class="text-center" style="color:white;text-shadow:2px 2px 2px black;text-align:center">Proceso Comercial en Excel</h1>
+                        </div>
+                        <div class="card-footer">
+                            <button id="myBtn7" name="opc" value="7" class="btn vertical-center btn-primary   " data-toggle="modal" style="box-shadow:2px 4px  4px rgba(13, 13, 13, 0.87)" data-target="#myModal7">
+                                <small class="card-title text-center" style="color:whitesmoke;text-shadow:6px 0px 5px black"><strong>Presiona para <br />    comenzar</strong></small>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+           
+
+            <!-- Next and previous buttons -->
+            <a class="prev" style="color:ghostwhite" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" style="color:ghostwhite" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            @*<span class="dot" style="display:none" onclick="currentSlide(3)"></span>*@
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+  
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+
+
+    var modal1 = document.getElementById("myModal1");
+    var modal2 = document.getElementById("myModal2");
+    var modal3 = document.getElementById("myModal3");
+    var modal4 = document.getElementById("myModal4");
+    var modal5 = document.getElementById("myModal5");
+    var modal6 = document.getElementById("myModal6");
+    var modal7 = document.getElementById("myModal7");
+    var modal8 = document.getElementById("myModal8");
+
+
+    const video1 = document.getElementById("myvideo1");
+
+    const video2 = document.getElementById("myvideo2");
+
+    const video3 = document.getElementById("myvideo3");
+
+    const video4 = document.getElementById("myvideo4");
+
+    const video5 = document.getElementById("myvideo5");
+
+    const video6 = document.getElementById("myvideo6");
+
+    const video7 = document.getElementById("myvideo7");
+
+    const video8 = document.getElementById("myvideo8");
+
+
+
+    var btn = document.getElementById("myBtn1");
+
+    var btn2 = document.getElementById("myBtn2");
+
+    var btn3 = document.getElementById("myBtn3")
+
+    var btn4 = document.getElementById("myBtn4");
+
+    var btn5 = document.getElementById("myBtn5");
+
+    var btn6 = document.getElementById("myBtn6");
+
+    var btn7 = document.getElementById("myBtn7");
+
+    var btn8 = document.getElementById("myBtn8");
+
+
+    function cerrarVid1() {
+        modal1.style.display = "none";
+        video1.pause();
+
+    }
+
+    function cerrarVid2() {
+        modal2.style.display = "none";
+        video2.pause();
+    }
+
+    function cerrarVid3() {
+        modal3.style.display = "none";
+        video3.pause();
+
+    }
+    function cerrarVid4() {
+        modal4.style.display = "none";
+        video4.pause();
+    }
+    function cerrarVid5() {
+        modal5.style.display = "none";
+        video5.pause();
+
+    }
+    function cerrarVid6() {
+        modal6.style.display = "none";
+        video6.pause();
+    }
+    function cerrarVid7() {
+        modal7.style.display = "none";
+        video7.pause();
+    }
+    function cerrarVid8() {
+        modal8.style.display = "none";
+        video8.pause();
+    }
+
+    
+
+
+    btn.onclick = function () {
+        modal1.style.display = "block";
+        //document.getElementById("videos").src = "https://strategias.blob.core.windows.net/asset-24dc5958-c7b2-4f25-83f6-3bf8cf2b416b/1-introduccion-admin-efectivo.mp4";
+        //document.getElementById("myvideo").load();
+
+
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn2.onclick = function () {
+        modal2.style.display = "block";
+        //document.getElementById("videos").src = "/Videos/Cursos/2-Retornos-financieros%20.mp4";
+        //document.getElementById("myvideo").load();
+
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn3.onclick = function () {
+        modal3.style.display = "block";
+        // document.getElementById("videos").src = "/Videos/Cursos/3-Transfer-Inter-DT.mp4";
+        // document.getElementById("myvideo").load();
+        Swal.fire({
+
+        icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn4.onclick = function () {
+        modal4.style.display = "block";
+        //document.getElementById("videos").src = "/Videos/Cursos/4-TC-monedero-electronico.mp4";
+        //document.getElementById("myvideo").load();
+
+
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn5.onclick = function () {
+        modal5.style.display = "block";
+        //document.getElementById("videos").src = "/Videos/Cursos/5-TT-TPV.mp4";
+        //document.getElementById("myvideo").load();
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn6.onclick = function () {
+        modal6.style.display = "block";
+        //document.getElementById("videos").src = "/Videos/Cursos/6-Admin-Nomina.mp4";
+        //document.getElementById("myvideo").load();
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn7.onclick = function () {
+        modal7.style.display = "block";
+        //document.getElementById("videos").src = "/Videos/Cursos/7-Plan-privado-pensiones.mp4";
+        //document.getElementById("myvideo").load();
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+    btn8.onclick = function () {
+        modal8.style.display = "block";
+        //document.getElementById("videos").src = "/Videos/Cursos/8-Sindicatos.mp4";
+        //document.getElementById("myvideo").load();
+        Swal.fire({
+            icon: 'warning',
+            title: 'Nueva Ventana Emergente',
+            text: 'Se abrirá una ventana emergente para visualizar el curso',
+            showConfirmButton: false,
+            timer: 3000,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+
+        })
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal1) {
+            modal1.style.display = "block";
+        }
+    }
+    window.onclick = function (event) {
+        if (event.target == modal2) {
+            modal2.style.display = "block";
+        }
+    }
+    window.onclick = function (event) {
+        if (event.target == modal3) {
+            modal3.style.display = "block";
+        }
+    }
+    window.onclick = function (event) {
+        if (event.target == modal4) {
+            modal4.style.display = "block";
+        }
+    }
+    video1window.onclick = function (event) {
+        if (event.target == modal5) {
+            modal5.style.display = "block";
+        }
+    }
+    window.onclick = function (event) {
+        if (event.target == modal6) {
+            modal6.style.display = "block";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal7) {
+                modal7.style.display = "block";
+            }
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal8) {
+                modal8.style.display = "block";
+            }
+        }
+   
+
+    }
+
+</script>
+
+<script src="~/Scripts/jquery-3.5.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+

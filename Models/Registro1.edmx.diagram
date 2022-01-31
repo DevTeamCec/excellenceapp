@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ad05397bb8094dc7a75282740665b80d" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Ct_Plaza" Width="1.5" PointX="4.25" PointY="1.375" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Ct_NivelCursos" Width="1.5" PointX="4.25" PointY="3.125" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_UsuariosCurso" Width="1.5" PointX="6.375" PointY="1.375" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Ct_ActivoCursos" Width="1.5" PointX="8.375" PointY="1.375" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Ct_Colores" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Ct_FormaPago" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Ct_Roles" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Ct_Status" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_CarritoCompra" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_CarritoItem" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_Categorias" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_Contactos" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_Direccion" Width="1.5" PointX="4.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_ImagenesProductos" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_Lugares" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_LugaresPases" Width="1.5" PointX="6.75" PointY="11.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_Marca" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_Mesas" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_OrdenCompra" Width="1.5" PointX="8" PointY="6" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_OrdenItem" Width="1.5" PointX="12.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_OrdenStatus" Width="1.5" PointX="5.75" PointY="7.25" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_Productos" Width="1.5" PointX="3" PointY="6" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_Tickets" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_Usuarios" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_Vip" Width="1.5" PointX="0.75" PointY="14.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.Tb_VipCon" Width="1.5" PointX="2.75" PointY="14.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.database_firewall_rules" Width="1.5" PointX="14.75" PointY="5.75" />
+        <EntityTypeShape EntityType="SysDesarrolloHModel.ipv6_database_firewall_rules" Width="1.5" PointX="14.75" PointY="8.75" />
+        <AssociationConnector Association="SysDesarrolloHModel.FK_Tb_Productos_Tb_Categorias" />
+        <AssociationConnector Association="SysDesarrolloHModel.FK_Tb_OrdenCompra_Tb_OrdenCompra" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

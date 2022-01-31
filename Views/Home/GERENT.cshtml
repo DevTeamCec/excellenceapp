@@ -1,0 +1,155 @@
+﻿@model IEnumerable<Curso.Models.UsuarioLogin>
+@{
+    ViewBag.Title = "Registro";
+    Layout = null;
+}
+    <head>
+        <script src="~/Scripts/sorttable.js"></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: rgba(232, 229, 229, 0.82);
+                font-family: 'Century Gothic';
+                font-size: 11.5px;
+            }
+
+
+
+            .card {
+                height: 250px !important;
+                z-index: 0;
+                -moz-border-radius: 2px;
+                box-shadow: 1px 4px 4px darkgrey;
+            }
+
+            .footer {
+                bottom: 0;
+                left: 0;
+                position: fixed;
+                width: 100%;
+                background-color: ghostwhite;
+                height: 2rem;
+                text-align: center;
+                font-size: 18px;
+                color: black;
+                -webkit-box-shadow: 4px 6px 6px black;
+                box-shadow: 4px 6px 6px black;
+            }
+
+            #center {
+                text-align: center;
+            }
+
+            .my-custom-scrollbar {
+                position: relative;
+                height: 200px;
+                overflow: auto;
+            }
+
+            .table-wrapper-scroll-y {
+                display: block;
+            }
+
+            table.dataTable thead .sorting:after,
+            table.dataTable thead .sorting:before,
+            table.dataTable thead .sorting_asc:after,
+            table.dataTable thead .sorting_asc:before,
+            table.dataTable thead .sorting_asc_disabled:after,
+            table.dataTable thead .sorting_asc_disabled:before,
+            table.dataTable thead .sorting_desc:after,
+            table.dataTable thead .sorting_desc:before,
+            table.dataTable thead .sorting_desc_disabled:after,
+            table.dataTable thead .sorting_desc_disabled:before {
+                bottom: .5em;
+            }
+        </style>
+    </head>
+<div class="row pt-3">
+    @*Grid Gerente*@
+    <div class="col-md-12 col-xs-12">
+        <div class="card card-container  bg-dark" style="box-shadow:6px 9px 7px black">
+
+            <div class="card-title">
+                <h2 id="center" style="color:whitesmoke;justify-content:normal;text-shadow:6px 0px 5px black">Socios Comerciales Registrados</h2>
+            </div>
+            <div class=" card-body">
+                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+                    <table id="dtDynamicVerticalScrollExample" class="table  table-dark table-hover sortable">
+                        <tr>
+
+                            <th class="th-sm">
+                                Socio Comercial
+                            </th>
+
+                            <th class="th-sm">
+                                Gerente
+                            </th>
+                            <th class="th-sm">
+                                Correo Electrónico
+                            </th>
+                            <th class="th-sm">
+                                Plaza
+                            </th>
+                            <th class="th-sm">
+                                Nivel
+                            </th>
+                            <th class="th-sm">
+                                Fecha Inicio
+                            </th>
+                            <th class="th-sm">
+                                Fecha Final
+                            </th>
+                            <th class="th-sm">
+                                Status
+                            </th>
+
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+
+                                <td>
+                                    @item.Txt_Usuario
+                                </td>
+
+                                <td>
+                                    @item.Txt_Gerente
+                                </td>
+                                <td>
+                                    @item.Txt_Email
+                                </td>
+                                <td>
+                                    @item.Txt_Plaza
+                                </td>
+                                <td>
+                                    @item.Txt_Nivel
+                                </td>
+                                <td>
+                                    @string.Format("{0: dd-MM-yyyy}", Convert.ToDateTime(item.Fec_Inicio.ToString()))
+                                </td>
+                                <td>
+                                    @string.Format("{0: dd-MM-yyyy}", Convert.ToDateTime(item.Fec_Fin.ToString()))
+                                </td>
+                                <td>
+                                    @item.Txt_Activo
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary" formtarget="_parent" onclick="window.open('@Url.Action("editar", "Home", new { id = item.Int_IdUsuario })')">Extender Fecha</button>
+
+                                    @* @Html.ActionLink("Details", "Details", new { id=item.Int_IdUsuario }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id=item.Int_IdUsuario })*@
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 

@@ -1,0 +1,21 @@
+cursos project 
+
+estructura systrack
+
+visor para video (video en DB) modal
+
+azure tutorial visualización de videos MP4 *servicio
+
+ID usuario 
+usuario
+pasword 1, 2, 3
+área 
+sub area 
+departamento 
+email 
+PlazaInt_
+
+Data Source=01PROGLP-CMEDER\SQLAUXPROG;Initial Catalog=Cursos;Integrated Security=True
+
+
+ 
